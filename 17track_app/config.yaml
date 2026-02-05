@@ -1,0 +1,39 @@
+name: "17Track App"
+slug: "17track_app"
+description: "Servidor 17Track (Node) para paquetes + background refresher"
+version: "0.1.0"
+arch:
+  - amd64
+  - aarch64
+  - armv7
+startup: services
+boot: auto
+init: false
+
+ports:
+  8787/tcp: 8787
+
+map:
+  - data:rw
+
+options:
+  port: 8787
+  bg_enabled: true
+  bg_interval_min: 15
+  bg_normal_interval_min: 45
+  bg_slow_hours: "8,20"
+  bg_delay_ms: 5000
+  ha_url: "http://supervisor/core"
+  ha_script: "jarvis_17track_notify"
+
+schema:
+  track17_token: str
+  port: int
+  bg_enabled: bool
+  bg_interval_min: int
+  bg_normal_interval_min: int
+  bg_slow_hours: str
+  bg_delay_ms: int
+  ha_url: str
+  ha_token: str
+  ha_script: str
