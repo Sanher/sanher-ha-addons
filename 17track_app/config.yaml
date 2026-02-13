@@ -1,7 +1,7 @@
 name: "17Track App"
 slug: "17track_app"
 description: "Servidor 17Track (Node) para paquetes + background refresher"
-version: "0.3.0"
+version: "0.3.1"
 arch:
   - amd64
   - aarch64
