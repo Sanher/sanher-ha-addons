@@ -4,6 +4,7 @@ set -e
 export TRACK17_TOKEN="$(bashio::config 'track17_token')"
 export PORT="$(bashio::config 'port')"
 export DATA_DIR="/data"
+export APP_LOG_LEVEL="$(bashio::config 'app_log_level')"
 
 export BG_ENABLED="$(bashio::config 'bg_enabled')"
 export BG_INTERVAL_MIN="$(bashio::config 'bg_interval_min')"

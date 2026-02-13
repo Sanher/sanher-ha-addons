@@ -18,6 +18,7 @@ map:
 
 options:
   port: 8787
+  app_log_level: "info"
   bg_enabled: true
   bg_interval_min: 15
   bg_normal_interval_min: 45
@@ -29,6 +30,7 @@ options:
 schema:
   track17_token: str
   port: int
+  app_log_level: str
   bg_enabled: bool
   bg_interval_min: int
   bg_normal_interval_min: int
