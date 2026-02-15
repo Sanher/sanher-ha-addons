@@ -10,7 +10,7 @@ WORKDIR /app
 ARG APP_REPO=https://github.com/Sanher/Agent_runner.git
 ARG APP_REF=v1.0.0
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends git tzdata \
+    && DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get install -y --no-install-recommends git tzdata \
     && rm -rf /var/lib/apt/lists/* \
     && git clone --depth 1 --branch ${APP_REF} ${APP_REPO} /app
 
