@@ -11,6 +11,8 @@ export BG_INTERVAL_MIN="$(bashio::config 'bg_interval_min')"
 export BG_NORMAL_INTERVAL_MIN="$(bashio::config 'bg_normal_interval_min')"
 export BG_SLOW_HOURS="$(bashio::config 'bg_slow_hours')"
 export BG_DELAY_MS="$(bashio::config 'bg_delay_ms')"
+export CARRIERS_17TRACK_CACHE_TTL_MS="$(bashio::config 'carriers_17track_cache_ttl_ms')"
+export CARRIERS_17TRACK_FETCH_TIMEOUT_MS="$(bashio::config 'carriers_17track_fetch_timeout_ms')"
 
 export HA_URL="$(bashio::config 'ha_url')"
 export HA_TOKEN="$(bashio::config 'ha_token')"

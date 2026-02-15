@@ -1,7 +1,7 @@
 name: "17Track App"
 slug: "17track_app"
 description: "Servidor 17Track (Node) para paquetes + background refresher"
-version: "0.3.3"
+version: "0.3.4"
 arch:
   - amd64
   - aarch64
@@ -24,6 +24,8 @@ options:
   bg_normal_interval_min: 45
   bg_slow_hours: "8,20"
   bg_delay_ms: 5000
+  carriers_17track_cache_ttl_ms: 86400000
+  carriers_17track_fetch_timeout_ms: 12000
   ha_url: "http://supervisor/core"
   ha_script: "jarvis_17track_notify"
 
@@ -36,6 +38,8 @@ schema:
   bg_normal_interval_min: int
   bg_slow_hours: str
   bg_delay_ms: int
+  carriers_17track_cache_ttl_ms: int?
+  carriers_17track_fetch_timeout_ms: int?
   ha_url: str
   ha_token: str
   ha_script: str

@@ -10,6 +10,27 @@ Servidor Node.js para consultar y gestionar envios de 17Track desde Home Assista
 - Integracion con script de Home Assistant para notificaciones.
 - Logs operativos con nivel configurable (`APP_LOG_LEVEL`).
 
+## Novedades 0.3.4
+
+- Carrier override por tracking persistido y reutilizado en refrescos.
+- Catalogo oficial de carriers 17Track cacheado y filtrable.
+- Logs mejorados con `ts_local`, `ts_utc` y `timezone`.
+- Validacion estricta de configuracion al arranque.
+
+Endpoints nuevos:
+
+```bash
+curl "http://<ip-ha>:8787/api/carriers/17track_cached?q=dpd&limit=50&refresh=true"
+
+curl -X POST "http://<ip-ha>:8787/api/owner/<owner>/tracking/<tracking>/carrier" \
+  -H "Content-Type: application/json" \
+  -d '{"carrier_alias":"gls_es"}'
+```
+
+Tip operativo:
+
+- Usa `q=dpd` en `/api/carriers/17track_cached` para elegir pais/variante correcta antes de fijar carrier.
+
 ## Instalacion
 
 1. En Home Assistant, abre **Settings -> Add-ons -> Add-on Store**.
@@ -29,6 +50,8 @@ Campos importantes:
 - `APP_LOG_LEVEL` (env): `debug`, `info`, `warn`, `error`.
 
 Documentacion completa: [DOCS.md](./DOCS.md)
+
+README backend: [Sanher/17Track_app](https://github.com/sanher/17Track_app)
 
 ## Soporte
 
