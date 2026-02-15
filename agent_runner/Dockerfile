@@ -8,7 +8,7 @@ WORKDIR /app
 
 # Trae el código de la app desde su repositorio y referencia versionada.
 ARG APP_REPO=https://github.com/Sanher/Agent_runner.git
-ARG APP_REF=v0.3.0
+ARG APP_REF=v0.3.1
 RUN apt-get update \
     && apt-get install -y --no-install-recommends git \
     && rm -rf /var/lib/apt/lists/* \
