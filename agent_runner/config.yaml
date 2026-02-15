@@ -16,18 +16,34 @@ panel_icon: mdi:robot
 
 options:
   job_secret: ""
-  hass_webhook_url_status: ""
-  hass_webhook_url_final: ""
-  sso_email: ""
-  target_url: ""
+  workday_webhook_start_url: ""
+  workday_webhook_final_url: ""
+  workday_webhook_start_break_url: ""
+  workday_webhook_stop_break_url: ""
+  workday_target_url: ""
+  workday_sso_email: ""
+  email_openai_api_key: ""
+  email_imap_email: ""
+  email_imap_password: ""
+  email_openai_model: ""
+  email_imap_host: ""
+  email_webhook_notify_url: ""
   timezone: "Europe/Madrid"
 
 schema:
-  job_secret: str?
-  hass_webhook_url_status: str?
-  hass_webhook_url_final: str?
-  sso_email: str?
-  target_url: str?
+  job_secret: str
+  workday_webhook_start_url: str
+  workday_webhook_final_url: str
+  workday_webhook_start_break_url: str
+  workday_webhook_stop_break_url: str
+  workday_target_url: str
+  workday_sso_email: str?
+  email_openai_api_key: str
+  email_imap_email: str
+  email_imap_password: str
+  email_openai_model: str?
+  email_imap_host: str?
+  email_webhook_notify_url: str?
   timezone: str?
 
 ports:

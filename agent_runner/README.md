@@ -6,11 +6,19 @@ Este repositorio está preparado para ejecutarse como add-on de Home Assistant.
 
 Se inyectan a través de `options`/`schema` en `config.yaml`:
 
-- `job_secret`
-- `hass_webhook_url_status` (feedback por paso; útil para Telegram vía automatización HA)
-- `hass_webhook_url_final` (resultado final)
-- `sso_email`
-- `target_url`
+- `job_secret` (obligatoria)
+- `workday_webhook_start_url` (obligatoria, reemplaza al antiguo webhook homogéneo de status)
+- `workday_webhook_final_url` (obligatoria)
+- `workday_webhook_start_break_url` (obligatoria)
+- `workday_webhook_stop_break_url` (obligatoria)
+- `workday_target_url` (obligatoria)
+- `workday_sso_email` (opcional)
+- `email_openai_api_key` (obligatoria para `email_agent`)
+- `email_imap_email` (obligatoria para `email_agent`)
+- `email_imap_password` (obligatoria para `email_agent`)
+- `email_openai_model` (opcional)
+- `email_imap_host` (opcional)
+- `email_webhook_notify_url` (opcional)
 - `timezone` (zona horaria para calcular ventanas, p.ej. `Europe/Madrid`)
 
 El directorio persistente siempre es `/data`.
@@ -20,6 +28,7 @@ Las ventanas horarias se calculan **dentro del contenedor** usando la hora local
 ## Endpoints
 
 - `GET /health`
+- `GET /status`
 - `GET /jobs`
 - `POST /run/{job_name}`
 
