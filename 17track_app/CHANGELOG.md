@@ -1,5 +1,22 @@
 # Changelog
 
+## 1.0.0 - 2026-02-16
+
+### Fixed
+- Corregida la activacion del refresco en background: `BG_ENABLED` ahora acepta `1|true|yes|on` (antes dependia de `1` exacto).
+- Evitado el caso en el que el toggle activado en Home Assistant no arrancaba el scheduler por formato de valor.
+
+### Improved
+- Mejorados logs de arranque para diagnostico:
+  - configuracion efectiva de background
+  - valor bruto recibido en `BG_ENABLED`
+  - estado de activacion/desactivacion del scheduler
+- Endpoint de build (`/api/_build`) ahora reporta version dinamica desde `package.json`.
+- Documentacion ampliada con troubleshooting de refresco (`/api/bg/status`, `/api/bg/start`).
+
+### Version
+- App version bump a `1.0.0`.
+
 ## 0.3.4
 
 - Nuevo endpoint `GET /api/carriers/17track_cached` (cacheado + filtro por `q`).

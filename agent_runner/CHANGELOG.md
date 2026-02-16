@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.0.3
+
+- Fix Ingress auth: la UI ya funciona con URL básica de Ingress sin `?secret`.
+- Fix auth en Web Interaction Agent dentro de Ingress (`status/history/events/retry-failed`).
+- Nueva UI por pestañas: Web Interaction Agent y Email Agent.
+- Nuevo panel Workday: estado en tiempo real, tiempos transcurrido/restante, ETA de break/final, historial diario y logs runtime.
+- Nuevo botón de reintento de acción fallida en Workday (`retry-failed`).
+- Mejora de seguridad/logs: sanitizado de URL en logs y reducción de ruido de debug/JSON parse errors.
+- Persistencia/recovery de Workday tras reinicio del add-on.
+
 ## Unreleased
 
 - Se actualiza la configuración del add-on para `workday_agent`:
