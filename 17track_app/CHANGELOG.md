@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.0
+
+- Sync upstream `sanher/17Track_app` (v1.0.0): chore(version): bump to version 1.0.0.
+
 ## 1.0.0 - 2026-02-16
 
 ### Fixed
