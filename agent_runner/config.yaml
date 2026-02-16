@@ -14,7 +14,7 @@ host_network: false
 ingress: true
 ingress_port: 8099
 panel_title: Agent Runner
-panel_icon: mdi:robot
+panel_icon: mdi:email-outline
 
 options:
   job_secret: ""
