@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.0
+
+- Sync upstream `Sanher/Agent_runner` (v2.0.0): chore(version): bump to version 2.0.0.
+
 ## 1.0.3
 
 - Fix Ingress auth: la UI ya funciona con URL básica de Ingress sin `?secret`.
