@@ -1,6 +1,7 @@
 name: Learn Languages
 slug: learn_languages
 description: "Minijuegos de japonés con UI web integrada."
+url: "git@github.com:Sanher/learn-languages.git"
 version: "0.0.1"
 arch:
   - amd64
