@@ -8,7 +8,7 @@ WORKDIR /app
 
 # clona tu app
 ARG APP_REPO=https://github.com/sanher/17Track_app.git
-ARG APP_REF=v1.0.0
+ARG APP_REF=v1.1.0
 RUN git clone --depth 1 --branch ${APP_REF} ${APP_REPO} /app
 
 RUN npm ci --omit=dev
