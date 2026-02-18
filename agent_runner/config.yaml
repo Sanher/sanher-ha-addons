@@ -36,6 +36,10 @@ options:
   email_default_from: ""
   email_default_cc: ""
   email_webhook_notify_url: ""
+  support_telegram_url: ""
+  support_marketing_url: ""
+  support_user_url_prefix: ""
+  telegram_wehbook_secret: ""
   timezone: "Europe/Madrid"
 
 schema:
@@ -58,6 +62,10 @@ schema:
   email_default_from: str?
   email_default_cc: str?
   email_webhook_notify_url: str?
+  support_telegram_url: str?
+  support_marketing_url: str?
+  support_user_url_prefix: str?
+  telegram_wehbook_secret: str?
   email_allowed_from_whitelist: str?
   timezone: str?
 
