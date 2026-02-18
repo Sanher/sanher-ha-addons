@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.4.1
+
+- Sync upstream `Sanher/Agent_runner` (v3.4.1): feat(api): añade webhook telegram para answers en addon.
+
 ## 3.4.0
 
 - Sync upstream `Sanher/Agent_runner` (v3.4.0): chore(version): bump to version 3.4.0.
