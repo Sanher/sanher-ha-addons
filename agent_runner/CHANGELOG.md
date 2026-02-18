@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.4.2
+
+- Sync upstream `Sanher/Agent_runner` (v3.4.2): feat(api): añade sugerencia IA manual y oculta chats revisados.
+
 ## 3.4.1
 
 - Sync upstream `Sanher/Agent_runner` (v3.4.1): feat(api): añade webhook telegram para answers en addon.
