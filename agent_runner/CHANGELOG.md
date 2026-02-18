@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.0.1
+
+- Sync upstream `Sanher/Agent_runner` (v3.0.1): fix(workday): completa scheduler y ui del bloqueo por fechas.
+
 ## 2.1.1
 
 - Sync upstream `Sanher/Agent_runner` (v2.1.1): fix(workday): recupera chromium faltante en playwright.
