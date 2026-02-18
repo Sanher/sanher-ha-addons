@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.4.0
+
+- Sync upstream `Sanher/Agent_runner` (v3.4.0): chore(version): bump to version 3.4.0.
+
 ## 3.0.1
 
 - Sync upstream `Sanher/Agent_runner` (v3.0.1): fix(workday): completa scheduler y ui del bloqueo por fechas.
