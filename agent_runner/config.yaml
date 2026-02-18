@@ -36,10 +36,20 @@ options:
   email_default_from: ""
   email_default_cc: ""
   email_webhook_notify_url: ""
+  answers_telegram_bot_token: ""
+  answers_openai_api_key: ""
+  answers_openai_model: ""
+  answers_request_timeout_seconds: 30
   support_telegram_url: ""
   support_marketing_url: ""
   support_user_url_prefix: ""
   telegram_wehbook_secret: ""
+  issue_repo_base_url: ""
+  issue_project_name: ""
+  issue_openai_api_key: ""
+  issue_openai_model: ""
+  issue_openai_style_law: ""
+  issue_webhook_url: ""
   timezone: "Europe/Madrid"
 
 schema:
@@ -62,10 +72,20 @@ schema:
   email_default_from: str?
   email_default_cc: str?
   email_webhook_notify_url: str?
+  answers_telegram_bot_token: str?
+  answers_openai_api_key: str?
+  answers_openai_model: str?
+  answers_request_timeout_seconds: int?
   support_telegram_url: str?
   support_marketing_url: str?
   support_user_url_prefix: str?
   telegram_wehbook_secret: str?
+  issue_repo_base_url: str?
+  issue_project_name: str?
+  issue_openai_api_key: str?
+  issue_openai_model: str?
+  issue_openai_style_law: str?
+  issue_webhook_url: str?
   email_allowed_from_whitelist: str?
   timezone: str?
 
