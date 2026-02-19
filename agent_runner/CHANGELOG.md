@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.6.0
+
+- Sync upstream `Sanher/Agent_runner` (v3.6.0): feat(api): amplía flujos del issue agent.
+
 ## 3.5.0
 
 - Sync upstream `Sanher/Agent_runner` (v3.5.0): feat(workday): mejora clicks y retencion de eventos.
