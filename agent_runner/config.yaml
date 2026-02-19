@@ -1,5 +1,5 @@
 name: Agent Runner
-version: "3.4.2"
+version: "3.4.4"
 slug: agent_runner
 description: Runner de automatizaciones IA/web para Home Assistant con persistencia en /data
 url: "https://github.com/Sanher/sanher-ha-addons/tree/main/agent_runner"

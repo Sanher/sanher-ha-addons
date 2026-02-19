@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.4.4
+
+- Sync upstream `Sanher/Agent_runner` (v3.4.4): fix(api): unifica logs en ingles y regresiones de answers.
+
 ## 3.4.2
 
 - Sync upstream `Sanher/Agent_runner` (v3.4.2): feat(api): añade sugerencia IA manual y oculta chats revisados.
