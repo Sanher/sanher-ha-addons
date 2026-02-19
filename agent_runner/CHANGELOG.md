@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.5.0
+
+- Sync upstream `Sanher/Agent_runner` (v3.5.0): feat(workday): mejora clicks y retencion de eventos.
+
 ## 3.4.5
 
 - Sync upstream `Sanher/Agent_runner` (v3.4.5): chore(version): bump to version 3.4.5.
