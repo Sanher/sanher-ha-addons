@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.4.5
+
+- Sync upstream `Sanher/Agent_runner` (v3.4.5): chore(version): bump to version 3.4.5.
+
 ## 3.4.4
 
 - Sync upstream `Sanher/Agent_runner` (v3.4.4): fix(api): unifica logs en ingles y regresiones de answers.
