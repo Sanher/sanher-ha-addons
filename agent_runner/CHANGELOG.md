@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.7.4
+
+- Sync upstream `Sanher/Agent_runner` (v3.7.4): chore(version): bump to version 3.7.4.
+
 ## 3.7.2
 
 - Sync upstream `Sanher/Agent_runner` (v3.7.2): chore(version): bump to version 3.7.2.
