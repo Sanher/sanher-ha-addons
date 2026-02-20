@@ -3,7 +3,7 @@ FROM ${BUILD_FROM}
 
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1 \
-    PORT=8099 \
+    PORT=8107 \
     JAPANESE_DB_PATH=/share/learn-languages/progress.db \
     LEARN_LANGUAGES_LOG_LEVEL=INFO
 
@@ -13,6 +13,6 @@ COPY requirements.txt /app/requirements.txt
 RUN pip install --no-cache-dir -r /app/requirements.txt
 
 COPY . /app
-EXPOSE 8099
+EXPOSE 8107
 
 CMD ["sh", "-c", "uvicorn languages.japanese.app.api:app --host 0.0.0.0 --port ${PORT}"]

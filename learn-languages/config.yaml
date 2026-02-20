@@ -1,7 +1,7 @@
 name: Learn Languages
 slug: learn_languages
 description: "Minijuegos de japonés con UI web integrada."
-url: "git@github.com:Sanher/learn-languages.git"
+url: "https://github.com/Sanher/learn-languages"
 version: "0.0.1"
 arch:
   - amd64
@@ -13,14 +13,15 @@ startup: services
 boot: auto
 init: false
 panel_icon: mdi:translate
+panel_title: Learn Languages
 ingress: true
-ingress_port: 8099
-webui: http://[HOST]:[PORT:8099]/web/
+ingress_port: 8107
+webui: http://[HOST]:[PORT:8107]/web/
 map:
   - share:rw
 
 ports:
-  8099/tcp: 8099
+  8107/tcp: 8107
 
 options:
   openai_api_key: ""
