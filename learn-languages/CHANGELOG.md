@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.1
+
+- Sync upstream `Sanher/learn-languages` (v0.1.1): feat(api): estandariza textos en ingles y agrega tests de regresion.
+
 ## 0.1.0
 
 - Sync upstream `Sanher/learn-languages` (v0.1.0): feat(api): estandariza textos en ingles y agrega tests de regresion.
