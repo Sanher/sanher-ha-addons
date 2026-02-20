@@ -50,6 +50,7 @@ options:
   issue_openai_model: ""
   issue_openai_style_law: ""
   issue_webhook_url: ""
+  issue_storage_state_path: ""
   timezone: "Europe/Madrid"
 
 schema:
@@ -86,6 +87,7 @@ schema:
   issue_openai_model: str?
   issue_openai_style_law: str?
   issue_webhook_url: str?
+  issue_storage_state_path: str?
   email_allowed_from_whitelist: str?
   timezone: str?
 
