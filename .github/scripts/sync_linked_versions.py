@@ -23,6 +23,13 @@ ADDONS = [
         "dockerfile": Path("17track_app/Dockerfile"),
         "changelog": Path("17track_app/CHANGELOG.md"),
     },
+    {
+        "name": "learn-languages",
+        "repo": "Sanher/learn-languages",
+        "config": Path("learn-languages/config.yaml"),
+        "dockerfile": Path("learn-languages/Dockerfile"),
+        "changelog": Path("learn-languages/CHANGELOG.md"),
+    },
 ]
 
 TAG_RE = re.compile(r"^v?(\d+)\.(\d+)(?:\.(\d+))?$")

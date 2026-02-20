@@ -9,10 +9,14 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
 
 WORKDIR /app
 
-COPY requirements.txt /app/requirements.txt
-RUN pip install --no-cache-dir -r /app/requirements.txt
+ARG APP_REF=v0.0.1
+ARG APP_REPO=https://github.com/Sanher/learn-languages.git
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends git \
+    && rm -rf /var/lib/apt/lists/* \
+    && git clone --depth 1 --branch ${APP_REF} ${APP_REPO} /app
 
-COPY . /app
+RUN pip install --no-cache-dir -r /app/requirements.txt
 EXPOSE 8107
 
 CMD ["sh", "-c", "uvicorn languages.japanese.app.api:app --host 0.0.0.0 --port ${PORT}"]
