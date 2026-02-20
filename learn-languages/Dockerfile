@@ -9,7 +9,7 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
 
 WORKDIR /app
 
-ARG APP_REF=v0.0.1
+ARG APP_REF=v0.1.0
 ARG APP_REPO=https://github.com/Sanher/learn-languages.git
 RUN apt-get update \
     && apt-get install -y --no-install-recommends git \
