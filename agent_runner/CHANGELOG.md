@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.7.2
+
+- Sync upstream `Sanher/Agent_runner` (v3.7.2): chore(version): bump to version 3.7.2.
+
 ## 3.6.1
 
 - Sync upstream `Sanher/Agent_runner` (v3.6.1): fix(workday): corrige padding de fechas en movil.
