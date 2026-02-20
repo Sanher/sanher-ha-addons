@@ -20,4 +20,4 @@ RUN apk add --no-cache git python3 py3-pip \
 ENV PATH="/opt/venv/bin:${PATH}"
 EXPOSE 8107
 
-CMD ["sh", "-c", "uvicorn languages.japanese.app.api:app --host 0.0.0.0 --port ${PORT}"]
+CMD ["python3", "-m", "uvicorn", "languages.japanese.app.api:app", "--host", "0.0.0.0", "--port", "8107"]
