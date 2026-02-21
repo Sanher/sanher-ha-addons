@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.9.0
+
+- Sync upstream `Sanher/Agent_runner` (v3.9.0): feat(api): unifica modo comentario y mapeo de issue types.
+
 ## 3.8.0
 
 - Sync upstream `Sanher/Agent_runner` (v3.8.0): feat(ui): reorganiza bloques de workday y ajustes de tema/email.
