@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.0
+
+- Sync upstream `Sanher/learn-languages` (v0.3.0): feat(ui): mejora feedback de audio y bloqueos de dragdrop.
+
 ## 0.2.0
 
 - Sync upstream `Sanher/learn-languages` (v0.2.0): fix(api): corrige carga de credenciales y dnd en juegos.
