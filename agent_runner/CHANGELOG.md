@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.10.0
+
+- Sync upstream `Sanher/Agent_runner` (v3.10.0): feat(workday): mejora fallback de clicks y reintentos.
+
 ## 3.9.0
 
 - Sync upstream `Sanher/Agent_runner` (v3.9.0): feat(api): unifica modo comentario y mapeo de issue types.
