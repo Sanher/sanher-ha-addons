@@ -1,7 +1,7 @@
 build_from:
-  amd64: mcr.microsoft.com/playwright/python:v1.49.1-jammy
-  aarch64: mcr.microsoft.com/playwright/python:v1.49.1-jammy
-  armv7: mcr.microsoft.com/playwright/python:v1.49.1-jammy
+  amd64: mcr.microsoft.com/playwright/python:v1.58.0-jammy
+  aarch64: mcr.microsoft.com/playwright/python:v1.58.0-jammy
+  armv7: mcr.microsoft.com/playwright/python:v1.58.0-jammy
 labels:
   org.opencontainers.image.title: "Agent Runner"
   org.opencontainers.image.description: "Home Assistant add-on for running AI/web agent jobs"
