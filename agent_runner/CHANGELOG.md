@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.12.1
+
+- Sync upstream `Sanher/Agent_runner` (v3.12.1): chore(workday): release parche de visibilidad para playwright.
+
 ## 3.12.0
 
 - Sync upstream `Sanher/Agent_runner` (v3.12.0): feat(ui): permite editar y ejecutar drafts de issue.
