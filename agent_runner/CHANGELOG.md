@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.12.3
+
+- Sync upstream `Sanher/Agent_runner` (v3.12.3): fix(api): corrige selector de projects y añade logs de create.
+
 ## 3.12.2
 
 - Sync upstream `Sanher/Agent_runner` (v3.12.2): fix(api): alinea issue agent con headless y artefactos playwright.
