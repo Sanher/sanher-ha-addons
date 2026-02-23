@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.0
+
+- Sync upstream `Sanher/learn-languages` (v0.2.0): fix(api): corrige carga de credenciales y dnd en juegos.
+
 ## 0.1.1
 
 - Sync upstream `Sanher/learn-languages` (v0.1.1): feat(api): estandariza textos en ingles y agrega tests de regresion.
