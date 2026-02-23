@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.12.2
+
+- Sync upstream `Sanher/Agent_runner` (v3.12.2): fix(api): alinea issue agent con headless y artefactos playwright.
+
 ## 3.12.1
 
 - Sync upstream `Sanher/Agent_runner` (v3.12.1): chore(workday): release parche de visibilidad para playwright.
