@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.11.0
+
+- Sync upstream `Sanher/Agent_runner` (v3.11.0): fix(api): corrige gestion de spam en answers agent.
+
 ## 3.10.1
 
 - Sync upstream `Sanher/Agent_runner` (v3.10.1): fix(workday): añade tests y trazas para reset de sesión.
