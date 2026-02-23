@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.10.1
+
+- Sync upstream `Sanher/Agent_runner` (v3.10.1): fix(workday): añade tests y trazas para reset de sesión.
+
 ## 3.10.0
 
 - Sync upstream `Sanher/Agent_runner` (v3.10.0): feat(workday): mejora fallback de clicks y reintentos.
