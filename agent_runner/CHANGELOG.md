@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.12.5
+
+- Sync upstream `Sanher/Agent_runner` (v3.12.5): fix(ui): mejora flujo issue y visibilidad del log playwright.
+
 ## 3.12.4
 
 - Sync upstream `Sanher/Agent_runner` (v3.12.4): fix(api): refuerza flujo post-create y resumen de issue agent.
