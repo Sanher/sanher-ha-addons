@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.12.8
+
+- Sync upstream `Sanher/Agent_runner` (v3.12.8): fix(api): refuerza flujo post-create y draft de issues.
+
 ## 3.12.7
 
 - Sync upstream `Sanher/Agent_runner` (v3.12.7): fix(ui): añade scroll al correo original.
