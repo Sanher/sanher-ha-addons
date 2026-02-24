@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.12.4
+
+- Sync upstream `Sanher/Agent_runner` (v3.12.4): fix(api): refuerza flujo post-create y resumen de issue agent.
+
 ## 3.12.3
 
 - Sync upstream `Sanher/Agent_runner` (v3.12.3): fix(api): corrige selector de projects y añade logs de create.
