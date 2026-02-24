@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.12.7
+
+- Sync upstream `Sanher/Agent_runner` (v3.12.7): fix(ui): añade scroll al correo original.
+
 ## 3.12.5
 
 - Sync upstream `Sanher/Agent_runner` (v3.12.5): fix(ui): mejora flujo issue y visibilidad del log playwright.
