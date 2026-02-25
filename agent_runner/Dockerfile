@@ -8,7 +8,7 @@ WORKDIR /app
 
 # Trae el código de la app desde su repositorio y referencia versionada.
 ARG APP_REPO=https://github.com/Sanher/Agent_runner.git
-ARG APP_REF=v3.12.8
+ARG APP_REF=v3.12.9
 RUN apt-get update \
     && DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get install -y --no-install-recommends git tzdata \
     && rm -rf /var/lib/apt/lists/* \
