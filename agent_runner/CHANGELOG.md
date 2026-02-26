@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.12.10
+
+- Sync upstream `Sanher/Agent_runner` (v3.12.10): fix(api): refuerza despliegue post-create en issues.
+
 ## 3.12.9
 
 - Sync upstream `Sanher/Agent_runner` (v3.12.9): fix(api): añade limpieza semanal y trazas de retention.
