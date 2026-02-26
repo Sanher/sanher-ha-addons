@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.4.0
+
+- Sync upstream `Sanher/learn-languages` (v0.4.0): feat(ui): añade juego de romanizacion por moras.
+
 ## 0.3.0
 
 - Sync upstream `Sanher/learn-languages` (v0.3.0): feat(ui): mejora feedback de audio y bloqueos de dragdrop.
