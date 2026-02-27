@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.5.0
+
+- Sync upstream `Sanher/learn-languages` (v0.5.0): feat(api): integra leccion tematica y flujo diario.
+
 ## 0.4.0
 
 - Sync upstream `Sanher/learn-languages` (v0.4.0): feat(ui): añade juego de romanizacion por moras.
