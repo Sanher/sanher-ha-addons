@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.5.1
+
+- Sync upstream `Sanher/learn-languages` (v0.5.1): fix(api): corrige gate de review y coherencia de nivel.
+
 ## 0.5.0
 
 - Sync upstream `Sanher/learn-languages` (v0.5.0): feat(api): integra leccion tematica y flujo diario.
