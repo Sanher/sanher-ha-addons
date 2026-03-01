@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.8.0
+
+- Sync upstream `Sanher/learn-languages` (v0.8.0): feat(api): refuerza hardening y traducciones en flujo diario.
+
 ## 0.7.0
 
 - Sync upstream `Sanher/learn-languages` (v0.7.0): feat(api): integra flujo por temas y examen semanal acumulativo.
