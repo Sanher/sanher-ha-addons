@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.9.1
+
+- Sync upstream `Sanher/learn-languages` (v0.9.1): fix(api): separa tareas extra del score diario.
+
 ## 0.9.0
 
 - Sync upstream `Sanher/learn-languages` (v0.9.0): feat(ui): ajusta aviso de traducción secundaria y flujo diario.
