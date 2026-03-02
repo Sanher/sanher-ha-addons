@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.9.0
+
+- Sync upstream `Sanher/learn-languages` (v0.9.0): feat(ui): ajusta aviso de traducción secundaria y flujo diario.
+
 ## 0.8.0
 
 - Sync upstream `Sanher/learn-languages` (v0.8.0): feat(api): refuerza hardening y traducciones en flujo diario.
