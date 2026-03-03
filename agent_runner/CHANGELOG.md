@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.12.13
+
+- Sync upstream `Sanher/Agent_runner` (v3.12.13): fix(api): amplía toggles post-create para backend.
+
 ## 3.12.11
 
 - Sync upstream `Sanher/Agent_runner` (v3.12.11): fix(api): refuerza despliegue post-create en issues.
