@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.12.14
+
+- Sync upstream `Sanher/Agent_runner` (v3.12.14): fix(api): refuerza selección de tipo en management.
+
 ## 3.12.13
 
 - Sync upstream `Sanher/Agent_runner` (v3.12.13): fix(api): amplía toggles post-create para backend.
