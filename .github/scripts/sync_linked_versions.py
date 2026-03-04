@@ -22,6 +22,7 @@ ADDONS = [
         "config": Path("17track_app/config.yaml"),
         "dockerfile": Path("17track_app/Dockerfile"),
         "changelog": Path("17track_app/CHANGELOG.md"),
+        "auto_sync": False,
     },
     {
         "name": "learn-languages",
@@ -208,6 +209,8 @@ def main() -> int:
     changes: List[Tuple[str, Version]] = []
 
     for addon in ADDONS:
+        if not addon.get("auto_sync", True):
+            continue
         changed, addon_name, latest = update_addon(addon)
         if changed:
             changes.append((addon_name, latest))
