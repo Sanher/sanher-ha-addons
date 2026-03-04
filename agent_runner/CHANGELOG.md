@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.12.15
+
+- Sync upstream `Sanher/Agent_runner` (v3.12.15): fix(api): prioriza toggle de proyecto en backend.
+
 ## 3.12.14
 
 - Sync upstream `Sanher/Agent_runner` (v3.12.14): fix(api): refuerza selección de tipo en management.
