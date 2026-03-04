@@ -1,53 +1,61 @@
 # Home Assistant Add-on: 17Track App
 
-Servidor Node.js para consultar y gestionar envios de 17Track desde Home Assistant.
+Servidor Node.js para gestionar envios con doble fuente:
+
+- `track17` (API 17Track)
+- `imap` (worker de lectura de buzones y ingesta de eventos)
 
 ## Caracteristicas
 
 - API REST para listar, anadir y borrar trackings por owner.
-- Override manual de estado delivered por tracking.
+- Soporte de multiples fuentes por tracking (`track17` e `imap`).
 - Refresco en background configurable.
 - Integracion con script de Home Assistant para notificaciones.
+- Worker IMAP periodico configurable desde el add-on.
 - Logs operativos con nivel configurable (`APP_LOG_LEVEL`).
 
-## Novedades 0.3.4
+## Novedades 2.0.0rc
 
-- Carrier override por tracking persistido y reutilizado en refrescos.
-- Catalogo oficial de carriers 17Track cacheado y filtrable.
-- Logs mejorados con `ts_local`, `ts_utc` y `timezone`.
-- Validacion estricta de configuracion al arranque.
-
-Endpoints nuevos:
-
-```bash
-curl "http://<ip-ha>:8787/api/carriers/17track_cached?q=dpd&limit=50&refresh=true"
-
-curl -X POST "http://<ip-ha>:8787/api/owner/<owner>/tracking/<tracking>/carrier" \
-  -H "Content-Type: application/json" \
-  -d '{"carrier_alias":"gls_es"}'
-```
-
-Tip operativo:
-
-- Usa `q=dpd` en `/api/carriers/17track_cached` para elegir pais/variante correcta antes de fijar carrier.
+- Configuracion IMAP completa desde opciones del add-on.
+- Soporte de fichero de cuentas en `/config/imap_accounts.json`.
+- Soporte de secretos IMAP por variables exportadas (`password_env` / OAuth envs).
+- Incluye Python 3 en la imagen para ejecutar el worker IMAP.
 
 ## Instalacion
 
 1. En Home Assistant, abre **Settings -> Add-ons -> Add-on Store**.
-2. Añade tu repositorio: `https://github.com/sanher/sanher-ha-addons`.
+2. Añade repositorio: `https://github.com/sanher/sanher-ha-addons`.
 3. Instala **17Track App**.
-4. Configura opciones (especialmente `track17_token`).
+4. Configura opciones (track17 y/o IMAP).
 5. Inicia el add-on.
 
-## Configuracion rapida
+## Configuracion rapida (IMAP)
 
-Campos importantes:
+1. Activa `imap_enabled: true`.
+2. Define `imap_accounts_file: /config/imap_accounts.json`.
+3. Rellena secretos IMAP en opciones (campos `imap_*_password`, `outlook_*`).
+4. Crea `/config/imap_accounts.json` con referencias `password_env`.
+5. Reinicia add-on y revisa logs.
 
-- `track17_token`: token de API de 17Track (obligatorio).
-- `ha_token`: Long-Lived Access Token de Home Assistant para llamadas a servicios.
-- `ha_script`: nombre del script de HA que recibira avisos (sin prefijo `script.`).
-- `bg_enabled`: activa/desactiva refresco automatico.
-- `APP_LOG_LEVEL` (env): `debug`, `info`, `warn`, `error`.
+Nota: si el backend clonado por `APP_REF` aun no expone endpoints `/imap`, el add-on desactiva automaticamente el worker IMAP y lo deja indicado en logs.
+
+Ejemplo de cuenta con filtro "solo Amazon para Mislata":
+
+```json
+{
+  "email": "filtro@correo.com",
+  "owner": "owner_b",
+  "provider": "gmail",
+  "auth": "password",
+  "password_env": "IMAP_GMAIL_FILTER_APP_PASSWORD",
+  "filters": {
+    "only_amazon": true,
+    "destination_keywords_all": ["mislata"],
+    "allowed_sender_domains": ["amazon.es", "amazon.com"],
+    "require_dkim_pass": true
+  }
+}
+```
 
 Documentacion completa: [DOCS.md](./DOCS.md)
 
@@ -57,6 +65,7 @@ README backend: [Sanher/17Track_app](https://github.com/sanher/17Track_app)
 
 Si hay un problema, revisa primero los logs del add-on y valida:
 
-- `track17_token` correcto.
-- `ha_token` correcto.
-- `ha_url` accesible desde el contenedor.
+- fichero `imap_accounts_file` accesible y JSON valido.
+- secretos `password_env` definidos en opciones del add-on.
+- `track17_token` si usas `source=track17`.
+- `ha_url`/`ha_token`/`ha_script` para notificaciones.

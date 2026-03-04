@@ -1,5 +1,17 @@
 # Changelog
 
+## 2.0.0rc
+
+- Hardening: el add-on no arranca el worker IMAP si el backend de `APP_REF` no expone `/imap/ingest`.
+
+- Integracion de configuracion IMAP en el add-on:
+  - nuevas opciones y schema para worker IMAP, filtros y secretos.
+  - soporte de fichero de cuentas (`imap_accounts_file`) en `/config`.
+  - variables de entorno para app passwords/OAuth de Gmail y Outlook.
+- `run.sh` actualizado para ejecutar worker IMAP periodico en paralelo al backend Node.
+- Docker image actualizada con `python3` para ejecutar el worker IMAP.
+- Documentacion del add-on actualizada (README + DOCS) con ejemplos y flujo en HA.
+
 ## 1.1.0
 
 - Sync upstream `sanher/17Track_app` (v1.1.0): chore(version): bump to version 1.1.0.
