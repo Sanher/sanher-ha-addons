@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.12.16
+
+- Sync upstream `Sanher/Agent_runner` (v3.12.16): fix(ui): muestra trazas cortas en tiempo real.
+
 ## 3.12.15
 
 - Sync upstream `Sanher/Agent_runner` (v3.12.15): fix(api): prioriza toggle de proyecto en backend.
