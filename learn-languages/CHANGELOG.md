@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.0
+
+- Sync upstream `Sanher/learn-languages` (v1.0.0): feat(api): añade secuencia temática inicial con refresco manual y tests.
+
 ## 0.9.1
 
 - Sync upstream `Sanher/learn-languages` (v0.9.1): fix(api): separa tareas extra del score diario.
