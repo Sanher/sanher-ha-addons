@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.1
+
+- Sync upstream `Sanher/learn-languages` (v1.0.1): fix(api): corrige prewarm y mejora carga inicial.
+
 ## 1.0.0
 
 - Sync upstream `Sanher/learn-languages` (v1.0.0): feat(api): añade secuencia temática inicial con refresco manual y tests.

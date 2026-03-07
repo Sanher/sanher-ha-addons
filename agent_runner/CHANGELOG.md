@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.12.17
+
+- Sync upstream `Sanher/Agent_runner` (v3.12.17): fix(ui): reconcilia submit tras timeout en issue agent.
+
 ## 3.12.16
 
 - Sync upstream `Sanher/Agent_runner` (v3.12.16): fix(ui): muestra trazas cortas en tiempo real.
