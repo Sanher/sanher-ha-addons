@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.13.0
+
+- Sync upstream `Sanher/Agent_runner` (v3.13.0): feat(ui): añade historial y resolución de runs de issues.
+
 ## 3.12.17
 
 - Sync upstream `Sanher/Agent_runner` (v3.12.17): fix(ui): reconcilia submit tras timeout en issue agent.
