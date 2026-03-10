@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.13.1
+
+- Sync upstream `Sanher/Agent_runner` (v3.13.1): fix(ui): ajusta histórico y modo comentario de issues.
+
 ## 3.13.0
 
 - Sync upstream `Sanher/Agent_runner` (v3.13.0): feat(ui): añade historial y resolución de runs de issues.
