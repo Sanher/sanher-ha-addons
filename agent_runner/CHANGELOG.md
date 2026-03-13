@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.13.2
+
+- Sync upstream `Sanher/Agent_runner` (v3.13.2): fix(ui): separa la caja del histórico de issues.
+
 ## 3.13.1
 
 - Sync upstream `Sanher/Agent_runner` (v3.13.1): fix(ui): ajusta histórico y modo comentario de issues.
