@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.0
+
+- Sync upstream `Sanher/learn-languages` (v1.1.0): fix(api): persiste la subida de nivel al día siguiente.
+
 ## 1.0.2
 
 - Sync upstream `Sanher/learn-languages` (v1.0.2): fix(api): persiste la subida de nivel al día siguiente.

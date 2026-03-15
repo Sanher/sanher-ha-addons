@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.13.3
+
+- Sync upstream `Sanher/Agent_runner` (v3.13.3): chore(version): bump to version 3.13.3.
+
 ## 3.13.2
 
 - Sync upstream `Sanher/Agent_runner` (v3.13.2): fix(ui): separa la caja del histórico de issues.
