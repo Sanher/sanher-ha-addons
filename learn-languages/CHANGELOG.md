@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.1
+
+- Sync upstream `Sanher/learn-languages` (v1.1.1): fix(workday): acumula progreso de nivel y corrige gap fill.
+
 ## 1.1.0
 
 - Sync upstream `Sanher/learn-languages` (v1.1.0): fix(api): persiste la subida de nivel al día siguiente.
