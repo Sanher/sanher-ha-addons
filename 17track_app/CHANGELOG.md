@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.1.1
+
+- Corrige la UI web para funcionar tras ingress de Home Assistant.
+- La retencion de 7 dias solo borra paquetes marcados manualmente como delivered.
+- El override manual ya no recrea trackings inexistentes.
+
 ## 2.1.0
 
 - Interfaz web nueva via ingress para revisar paquetes por owner.
