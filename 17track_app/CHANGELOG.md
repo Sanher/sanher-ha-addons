@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.1.0rc
+
+- Interfaz web nueva via ingress para revisar paquetes por owner.
+- Edicion desde la UI de alias, courier IMAP, delivered/undelivered y borrado manual.
+- `imap_worker_lookback_days` pasa a 60 dias por defecto para limitar la primera importacion a los ultimos dos meses.
+- Documentacion del add-on actualizada para ingress y modo IMAP-only.
+
 ## 2.0.0rc
 
 - Hardening: el add-on no arranca el worker IMAP si el backend de `APP_REF` no expone `/imap/ingest`.

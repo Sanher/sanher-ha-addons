@@ -1,7 +1,7 @@
 name: "17Track App"
 slug: "17track_app"
 description: "Servidor 17Track (Node) para paquetes + background refresher + worker IMAP"
-version: "2.0.0rc"
+version: "2.1.0rc"
 arch:
   - amd64
   - aarch64
@@ -9,6 +9,10 @@ arch:
 startup: services
 boot: auto
 init: false
+ingress: true
+ingress_port: 8787
+panel_title: Paquetes IMAP
+panel_icon: mdi:package-variant-closed
 
 ports:
   8787/tcp: 8787
@@ -43,7 +47,7 @@ options:
   imap_enabled: true
   imap_accounts_file: "/config/imap_accounts.json"
   imap_worker_interval_min: 10
-  imap_worker_lookback_days: 30
+  imap_worker_lookback_days: 60
   imap_worker_fetch_limit: 120
   imap_ingest_batch_size: 100
   imap_ingest_timeout_sec: 20

@@ -1,21 +1,21 @@
 # Home Assistant Add-on: 17Track App
 
-Servidor Node.js para gestionar envios con doble fuente:
-
-- `track17` (API 17Track)
-- `imap` (worker de lectura de buzones y ingesta de eventos)
+Servidor Node.js para gestionar paquetes desde IMAP con interfaz web via ingress.
 
 ## Caracteristicas
 
 - API REST para listar, anadir y borrar trackings por owner.
-- Soporte de multiples fuentes por tracking (`track17` e `imap`).
+- Modo IMAP-only para paquetes detectados por correo.
 - Refresco en background configurable.
 - Integracion con script de Home Assistant para notificaciones.
 - Worker IMAP periodico configurable desde el add-on.
 - Logs operativos con nivel configurable (`APP_LOG_LEVEL`).
 
-## Novedades 2.0.0rc
+## Novedades 2.1.0rc
 
+- Interfaz web nueva via ingress para revisar paquetes por owner.
+- Edicion desde la UI de alias, courier IMAP, delivered/undelivered y borrado manual.
+- `imap_worker_lookback_days` pasa a 60 dias por defecto para limitar la primera importacion a dos meses.
 - Configuracion IMAP completa desde opciones del add-on.
 - Soporte de fichero de cuentas en `/config/imap_accounts.json`.
 - Soporte de secretos IMAP por variables exportadas (`password_env` / OAuth envs).
@@ -26,7 +26,7 @@ Servidor Node.js para gestionar envios con doble fuente:
 1. En Home Assistant, abre **Settings -> Add-ons -> Add-on Store**.
 2. Añade repositorio: `https://github.com/sanher/sanher-ha-addons`.
 3. Instala **17Track App**.
-4. Configura opciones (track17 y/o IMAP).
+4. Configura opciones IMAP y abre la UI desde ingress.
 5. Inicia el add-on.
 
 ## Configuracion rapida (IMAP)
@@ -67,5 +67,12 @@ Si hay un problema, revisa primero los logs del add-on y valida:
 
 - fichero `imap_accounts_file` accesible y JSON valido.
 - secretos `password_env` definidos en opciones del add-on.
-- `track17_token` si usas `source=track17`.
+- `app_api_key` solo si decides proteger la API tambien fuera de ingress.
 - `ha_url`/`ha_token`/`ha_script` para notificaciones.
+
+
+## Ingress
+
+- La interfaz web queda disponible via ingress de Home Assistant.
+- La UI muestra paquetes agrupados por owner y permite editar alias, courier, marcar delivered/undelivered y borrar entradas.
+- `imap_worker_lookback_days` pasa a 60 dias por defecto para limitar la primera importacion a los ultimos dos meses.

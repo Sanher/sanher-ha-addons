@@ -3,6 +3,10 @@
 ## Opciones
 
 ```yaml
+ingress: true
+ingress_port: 8787
+panel_title: "Paquetes IMAP"
+panel_icon: "mdi:package-variant-closed"
 port: 8787
 app_log_level: "info"
 app_api_key: ""
@@ -29,7 +33,7 @@ track17_token: "..."
 imap_enabled: true
 imap_accounts_file: "/config/imap_accounts.json"
 imap_worker_interval_min: 10
-imap_worker_lookback_days: 30
+imap_worker_lookback_days: 60
 imap_worker_fetch_limit: 120
 imap_ingest_batch_size: 100
 imap_ingest_timeout_sec: 20
@@ -49,7 +53,7 @@ outlook_imap_refresh_token: ""
 
 ## Variables y comportamiento
 
-- `track17_token`: token para API 17Track (`source=track17`).
+- `track17_token`: legado; la app actual funciona en modo IMAP-only.
 - `app_api_key`: protege API (excepto `/health` y `/api/_build`), tambien usada por el worker IMAP para `POST /imap/ingest`.
 - `ha_*`: parametros de notificacion + auditoria en Home Assistant.
 - `imap_enabled`: activa worker IMAP periodico.
@@ -61,7 +65,7 @@ Notas importantes:
 
 - El worker IMAP usa `/data/imap_worker_state.json` para cache de `last_uid` por cuenta.
 - Si el fichero `imap_accounts_file` no existe o no es valido, el worker registra error y reintenta en el siguiente ciclo.
-- `track17` e `imap` pueden convivir; no se desactiva 17Track al activar IMAP.
+- La app esta orientada a IMAP-only; la UI de ingress trabaja sobre paquetes ingeridos desde correo.
 
 ## Como configurar cuentas IMAP sin exponer secretos en Git
 
@@ -141,3 +145,10 @@ Nota: si `APP_REF` aun apunta a una version sin endpoints `/imap`, el add-on no 
 3. Si no aparecen estados:
 - revisa `track17_token` para `source=track17`.
 - revisa conectividad saliente del contenedor para IMAP/OAuth.
+
+
+## Ingress
+
+- La interfaz web queda disponible via ingress de Home Assistant.
+- La UI muestra paquetes agrupados por owner y permite editar alias, courier, marcar delivered/undelivered y borrar entradas.
+- `imap_worker_lookback_days` pasa a 60 dias por defecto para limitar la primera importacion a los ultimos dos meses.
