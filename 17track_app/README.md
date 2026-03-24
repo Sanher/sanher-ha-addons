@@ -11,7 +11,7 @@ Servidor Node.js para gestionar paquetes desde IMAP con interfaz web via ingress
 - Worker IMAP periodico configurable desde el add-on.
 - Logs operativos con nivel configurable (`APP_LOG_LEVEL`).
 
-## Novedades 2.1.0rc
+## Novedades 2.1.0
 
 - Interfaz web nueva via ingress para revisar paquetes por owner.
 - Edicion desde la UI de alias, courier IMAP, delivered/undelivered y borrado manual.

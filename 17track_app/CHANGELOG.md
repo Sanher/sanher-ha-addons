@@ -1,6 +1,6 @@
 # Changelog
 
-## 2.1.0rc
+## 2.1.0
 
 - Interfaz web nueva via ingress para revisar paquetes por owner.
 - Edicion desde la UI de alias, courier IMAP, delivered/undelivered y borrado manual.
