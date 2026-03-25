@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.2.1
+
+- Actualiza la referencia del backend a `v2.2.1`.
+
 ## 2.1.2
 
 - Simplifica la configuracion visible del add-on ocultando opciones internas de IMAP, auditoria HA y puerto fijo.
