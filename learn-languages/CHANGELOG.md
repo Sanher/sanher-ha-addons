@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.2.0
+
+- Sync upstream `Sanher/learn-languages` (v1.2.0): feat(api): añade cobertura por competencias y progreso de rango.
+
 ## 1.1.1
 
 - Sync upstream `Sanher/learn-languages` (v1.1.1): fix(workday): acumula progreso de nivel y corrige gap fill.
