@@ -1,37 +1,34 @@
 #!/usr/bin/with-contenv bashio
 set -e
 
-export TRACK17_TOKEN="$(bashio::config 'track17_token')"
-export PORT="$(bashio::config 'port')"
+export PORT="8787"
 export DATA_DIR="/data"
-export APP_LOG_LEVEL="$(bashio::config 'app_log_level')"
 export APP_API_KEY="$(bashio::config 'app_api_key')"
 export APP_JSON_LIMIT="$(bashio::config 'app_json_limit')"
 
 export BG_ENABLED="$(bashio::config 'bg_enabled')"
 export BG_INTERVAL_MIN="$(bashio::config 'bg_interval_min')"
 export BG_NORMAL_INTERVAL_MIN="$(bashio::config 'bg_normal_interval_min')"
+export BG_DELAY_MS="0"
 export BG_SLOW_HOURS="$(bashio::config 'bg_slow_hours')"
-export BG_DELAY_MS="$(bashio::config 'bg_delay_ms')"
-export CARRIERS_17TRACK_CACHE_TTL_MS="$(bashio::config 'carriers_17track_cache_ttl_ms')"
-export CARRIERS_17TRACK_FETCH_TIMEOUT_MS="$(bashio::config 'carriers_17track_fetch_timeout_ms')"
 
 export HA_URL="$(bashio::config 'ha_url')"
 export HA_TOKEN="$(bashio::config 'ha_token')"
 export HA_SCRIPT="$(bashio::config 'ha_script')"
-export HA_AUDIT_LOG_ENABLED="$(bashio::config 'ha_audit_log_enabled')"
-export HA_AUDIT_LOG_LEVEL="$(bashio::config 'ha_audit_log_level')"
-export HA_AUDIT_LOG_NAME="$(bashio::config 'ha_audit_log_name')"
-export HA_AUDIT_LOG_ENTITY_ID="$(bashio::config 'ha_audit_log_entity_id')"
+export HA_AUDIT_LOG_ENABLED="true"
+export HA_AUDIT_LOG_LEVEL="info"
+export HA_AUDIT_LOG_NAME="Paquetes App"
+export HA_AUDIT_LOG_ENTITY_ID=""
 
-# IMAP worker configuration
+# IMAP worker configuration hidden from add-on UI.
 export IMAP_ACCOUNTS_FILE="$(bashio::config 'imap_accounts_file')"
+export IMAP_WORKER_INTERVAL_MIN="10"
 export IMAP_WORKER_LOOKBACK_DAYS="$(bashio::config 'imap_worker_lookback_days')"
-export IMAP_WORKER_FETCH_LIMIT="$(bashio::config 'imap_worker_fetch_limit')"
-export IMAP_INGEST_BATCH_SIZE="$(bashio::config 'imap_ingest_batch_size')"
-export IMAP_INGEST_TIMEOUT_SEC="$(bashio::config 'imap_ingest_timeout_sec')"
-export IMAP_WORKER_DRY_RUN="$(bashio::config 'imap_worker_dry_run')"
-export IMAP_DEFAULT_OWNER="$(bashio::config 'imap_default_owner')"
+export IMAP_WORKER_FETCH_LIMIT="120"
+export IMAP_INGEST_BATCH_SIZE="100"
+export IMAP_INGEST_TIMEOUT_SEC="20"
+export IMAP_WORKER_DRY_RUN="false"
+export IMAP_DEFAULT_OWNER="unnamed"
 export IMAP_WORKER_STATE_PATH="/data/imap_worker_state.json"
 export IMAP_INGEST_BASE_URL="http://127.0.0.1:${PORT}"
 
@@ -55,11 +52,7 @@ backend_supports_imap() {
 }
 
 start_imap_worker_loop() {
-  local interval_min
-  interval_min="$(bashio::config 'imap_worker_interval_min')"
-  if ! [[ "$interval_min" =~ ^[0-9]+$ ]] || [ "$interval_min" -lt 1 ]; then
-    interval_min=10
-  fi
+  local interval_min="${IMAP_WORKER_INTERVAL_MIN:-10}"
 
   if [ ! -f /app/scripts/imap_ingest_worker.py ]; then
     bashio::log.warning "IMAP habilitado pero /app/scripts/imap_ingest_worker.py no existe en esta build."
@@ -82,10 +75,6 @@ start_imap_worker_loop() {
   ) &
 }
 
-if bashio::var.true "$(bashio::config 'imap_enabled')"; then
-  start_imap_worker_loop
-else
-  bashio::log.info "IMAP worker desactivado por configuracion."
-fi
+start_imap_worker_loop
 
 exec node src/index.js

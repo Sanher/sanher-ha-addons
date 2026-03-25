@@ -8,8 +8,8 @@ Servidor Node.js para gestionar paquetes desde IMAP con interfaz web via ingress
 - Modo IMAP-only para paquetes detectados por correo.
 - Refresco en background configurable.
 - Integracion con script de Home Assistant para notificaciones.
-- Worker IMAP periodico configurable desde el add-on.
-- Logs operativos con nivel configurable (`APP_LOG_LEVEL`).
+- Worker IMAP periodico con defaults internos estables.
+- Logs operativos de la app Node fijos a nivel `info`.
 
 ## Novedades 2.1.1
 
@@ -31,11 +31,10 @@ Servidor Node.js para gestionar paquetes desde IMAP con interfaz web via ingress
 
 ## Configuracion rapida (IMAP)
 
-1. Activa `imap_enabled: true`.
-2. Define `imap_accounts_file: /config/imap_accounts.json`.
-3. Rellena secretos IMAP en opciones (campos `imap_*_password`, `outlook_*`).
-4. Crea `/config/imap_accounts.json` con referencias `password_env`.
-5. Reinicia add-on y revisa logs.
+1. Define `imap_accounts_file: /config/imap_accounts.json`.
+2. Rellena secretos IMAP en opciones (campos `imap_*_password`, `outlook_*`).
+3. Crea `/config/imap_accounts.json` con referencias `password_env`.
+4. Reinicia add-on y revisa logs.
 
 Nota: si el backend clonado por `APP_REF` aun no expone endpoints `/imap`, el add-on desactiva automaticamente el worker IMAP y lo deja indicado en logs.
 
