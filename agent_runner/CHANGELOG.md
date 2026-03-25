@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.14.0
+
+- Sync upstream `Sanher/Agent_runner` (v3.14.0): feat(ui): añade enriquecimiento por enlaces y warnings de draft.
+
 ## 3.13.3
 
 - Sync upstream `Sanher/Agent_runner` (v3.13.3): chore(version): bump to version 3.13.3.

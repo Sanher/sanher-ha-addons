@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.2.1
+
+- Sync upstream `Sanher/learn-languages` (v1.2.1): fix(ui): mejora audio guiado y carga de extras.
+
 ## 1.2.0
 
 - Sync upstream `Sanher/learn-languages` (v1.2.0): feat(api): añade cobertura por competencias y progreso de rango.
