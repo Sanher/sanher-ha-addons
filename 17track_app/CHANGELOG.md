@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.1.2
+
+- Simplifica la configuracion visible del add-on ocultando opciones internas de IMAP, auditoria HA y puerto fijo.
+- Sube la auditoria HA interna a nivel `info`, pero evita enviar el resumen periodico del scheduler al logbook si no hay cambios relevantes.
+- Fija defaults internos estables para IMAP-only: worker siempre activo, owner por defecto `unnamed` y `BG_DELAY_MS=0`.
+
 ## 2.1.1
 
 - Corrige la UI web para funcionar tras ingress de Home Assistant.
