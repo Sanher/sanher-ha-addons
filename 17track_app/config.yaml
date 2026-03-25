@@ -1,7 +1,7 @@
 name: "17Track App"
 slug: "17track_app"
 description: "Servidor 17Track (Node) para paquetes + background refresher + worker IMAP"
-version: "2.1.2"
+version: "2.2.0"
 arch:
   - amd64
   - aarch64
@@ -34,6 +34,11 @@ options:
   ha_token: ""
   ha_script: "jarvis_17track_notify"
 
+  telegram_bot_token: ""
+  telegram_session_secret: ""
+  telegram_access_file: "/config/telegram_access.json"
+  telegram_public_base_url: ""
+
   imap_accounts_file: "/config/imap_accounts.json"
   imap_worker_lookback_days: 60
 
@@ -60,6 +65,11 @@ schema:
   ha_url: str
   ha_token: str
   ha_script: str
+
+  telegram_bot_token: password?
+  telegram_session_secret: password?
+  telegram_access_file: str?
+  telegram_public_base_url: str?
 
   imap_accounts_file: str?
   imap_worker_lookback_days: int?

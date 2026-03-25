@@ -20,6 +20,11 @@ export HA_AUDIT_LOG_LEVEL="info"
 export HA_AUDIT_LOG_NAME="Paquetes App"
 export HA_AUDIT_LOG_ENTITY_ID=""
 
+export TELEGRAM_BOT_TOKEN="$(bashio::config 'telegram_bot_token')"
+export TELEGRAM_SESSION_SECRET="$(bashio::config 'telegram_session_secret')"
+export TELEGRAM_ACCESS_FILE="$(bashio::config 'telegram_access_file')"
+export TELEGRAM_PUBLIC_BASE_URL="$(bashio::config 'telegram_public_base_url')"
+
 # IMAP worker configuration hidden from add-on UI.
 export IMAP_ACCOUNTS_FILE="$(bashio::config 'imap_accounts_file')"
 export IMAP_WORKER_INTERVAL_MIN="10"
