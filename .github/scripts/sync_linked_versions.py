@@ -22,7 +22,6 @@ ADDONS = [
         "config": Path("17track_app/config.yaml"),
         "dockerfile": Path("17track_app/Dockerfile"),
         "changelog": Path("17track_app/CHANGELOG.md"),
-        "auto_sync": False,
     },
     {
         "name": "learn-languages",
