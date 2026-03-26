@@ -17,6 +17,7 @@ bg_slow_hours: "8,20"
 ha_url: "http://supervisor/core"
 ha_token: "..."
 ha_script: "jarvis_17track_notify"
+ha_user_owners_file: "/config/ha_user_owners.json"
 imap_accounts_file: "/config/imap_accounts.json"
 imap_worker_lookback_days: 60
 
@@ -36,6 +37,7 @@ outlook_imap_refresh_token: ""
 - Los logs de la app Node quedan fijos a nivel `info`. La auditoria HA queda activa internamente a nivel `info` con nombre `Paquetes App`; el resumen periodico del scheduler se queda en logs del add-on para no saturar el logbook.
 - `app_api_key`: protege API (excepto `/health` y `/api/_build`), tambien usada por el worker IMAP para `POST /imap/ingest`.
 - `ha_*`: parametros de notificacion + auditoria en Home Assistant.
+- `ha_user_owners_file`: ruta al JSON que mapea `ha_user_id` de Home Assistant a owners visibles en ingress. Si no se cambia, el backend usa `/config/ha_user_owners.json`.
 - `imap_accounts_file`: ruta al JSON de cuentas IMAP (recomendado en `/config`).
 - `imap_worker_lookback_days`: limita la primera importacion a una ventana inicial.
 - El worker IMAP queda siempre activo en el add-on. La frecuencia y otros limites operan con defaults internos estables.
@@ -45,6 +47,7 @@ Notas importantes:
 - El worker IMAP usa `/data/imap_worker_state.json` para cache de `last_uid` por cuenta.
 - Si el fichero `imap_accounts_file` no existe o no es valido, el worker registra error y reintenta en el siguiente ciclo.
 - La app esta orientada a IMAP-only; la UI de ingress trabaja sobre paquetes ingeridos desde correo.
+- El mapeo de usuarios HA es un fichero separado. No reutiliza `telegram_access.json`.
 
 ## Como configurar cuentas IMAP sin exponer secretos en Git
 
@@ -125,4 +128,25 @@ Nota: si `APP_REF` aun apunta a una version sin endpoints `/imap`, el add-on no 
 
 - La interfaz web queda disponible via ingress de Home Assistant.
 - La UI muestra paquetes agrupados por owner y permite editar alias, courier, marcar delivered/undelivered y borrar entradas.
+- Cuando la peticion entra por ingress, el backend puede usar el header `X-Remote-User-Id` para resolver el usuario de Home Assistant y filtrar los owners visibles.
+- El mapeo se define en `/config/ha_user_owners.json` o en la ruta configurada en `ha_user_owners_file`.
+- Si un usuario HA entra por ingress y no esta mapeado, recibira `403`.
+- Esto solo aplica al acceso por ingress. El acceso directo por puerto no usa este mapeo automaticamente.
 - `imap_worker_lookback_days` pasa a 60 dias por defecto para limitar la primera importacion a los ultimos dos meses.
+
+Formato esperado de `/config/ha_user_owners.json`:
+
+```json
+[
+  {
+    "ha_user_id": "uuid-del-usuario-ha-1",
+    "owners": ["bob"]
+  },
+  {
+    "ha_user_id": "uuid-del-usuario-ha-2",
+    "owners": ["alice"]
+  }
+]
+```
+
+Usa `ha_user_id`, no display name. `owners` debe ser siempre una lista.

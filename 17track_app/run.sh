@@ -15,6 +15,8 @@ export BG_SLOW_HOURS="$(bashio::config 'bg_slow_hours')"
 export HA_URL="$(bashio::config 'ha_url')"
 export HA_TOKEN="$(bashio::config 'ha_token')"
 export HA_SCRIPT="$(bashio::config 'ha_script')"
+HA_USER_OWNERS_FILE="$(bashio::config 'ha_user_owners_file')"
+export HA_USER_OWNERS_FILE
 export HA_AUDIT_LOG_ENABLED="true"
 export HA_AUDIT_LOG_LEVEL="info"
 export HA_AUDIT_LOG_NAME="Paquetes App"

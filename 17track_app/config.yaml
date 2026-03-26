@@ -33,6 +33,7 @@ options:
   ha_url: "http://supervisor/core"
   ha_token: ""
   ha_script: "jarvis_17track_notify"
+  ha_user_owners_file: "/config/ha_user_owners.json"
 
   telegram_bot_token: ""
   telegram_session_secret: ""
@@ -65,6 +66,7 @@ schema:
   ha_url: str
   ha_token: str
   ha_script: str
+  ha_user_owners_file: str?
 
   telegram_bot_token: password?
   telegram_session_secret: password?

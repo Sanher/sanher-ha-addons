@@ -9,6 +9,7 @@ Servidor Node.js para gestionar paquetes desde IMAP con interfaz web via ingress
 - Refresco en background configurable.
 - Integracion con script de Home Assistant para notificaciones.
 - Worker IMAP periodico con defaults internos estables.
+- Filtro opcional de paquetes por usuario de Home Assistant cuando entras por ingress.
 - Logs operativos de la app Node fijos a nivel `info`.
 
 ## Novedades 2.1.2
@@ -41,6 +42,33 @@ Servidor Node.js para gestionar paquetes desde IMAP con interfaz web via ingress
 4. Reinicia add-on y revisa logs.
 
 Nota: si el backend clonado por `APP_REF` aun no expone endpoints `/imap`, el add-on desactiva automaticamente el worker IMAP y lo deja indicado en logs.
+
+## Mapeo de usuarios HA por ingress
+
+- La UI de ingress puede filtrar paquetes por usuario de Home Assistant.
+- El backend usa el header `X-Remote-User-Id` que inyecta ingress para resolver el usuario HA actual.
+- El mapeo se define en `/config/ha_user_owners.json` y se expone en el add-on como `ha_user_owners_file`.
+- Si no configuras el campo, el backend usa por defecto `/config/ha_user_owners.json`.
+- Si un usuario HA entra por ingress y no esta mapeado, recibira `403`.
+- Esto solo aplica al acceso por ingress. El acceso directo por puerto no usa este mapeo automaticamente.
+- Este fichero es independiente de `telegram_access.json`; no se reutiliza.
+
+Formato esperado:
+
+```json
+[
+  {
+    "ha_user_id": "uuid-del-usuario-ha-1",
+    "owners": ["bob"]
+  },
+  {
+    "ha_user_id": "uuid-del-usuario-ha-2",
+    "owners": ["alice"]
+  }
+]
+```
+
+Usa `ha_user_id` real de Home Assistant, no el display name. `owners` debe ser siempre una lista.
 
 Ejemplo de cuenta con filtro "solo Amazon para Mislata":
 
@@ -78,4 +106,5 @@ Si hay un problema, revisa primero los logs del add-on y valida:
 
 - La interfaz web queda disponible via ingress de Home Assistant.
 - La UI muestra paquetes agrupados por owner y permite editar alias, courier, marcar delivered/undelivered y borrar entradas.
+- Si `ha_user_owners_file` esta configurado, la UI puede limitar los owners visibles segun el `X-Remote-User-Id` del usuario HA que entra por ingress.
 - `imap_worker_lookback_days` pasa a 60 dias por defecto para limitar la primera importacion a los ultimos dos meses.
