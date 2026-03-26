@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.5.0
+
+- Sync upstream `sanher/17Track_app` (v2.5.0): chore(version): bump to version 2.5.0.
+
 ## 2.4.0
 
 - Sync upstream `sanher/17Track_app` (v2.4.0): chore(api): neutraliza owners en tests.
