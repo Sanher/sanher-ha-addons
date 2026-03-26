@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.4.0
+
+- Sync upstream `sanher/17Track_app` (v2.4.0): chore(api): neutraliza owners en tests.
+
 ## 2.3.0
 
 - Actualiza la referencia del backend a `v2.3.0`.

@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.14.1
+
+- Sync upstream `Sanher/Agent_runner` (v3.14.1): fix(ui): corrige bloqueo del script compartido.
+
 ## 3.14.0
 
 - Sync upstream `Sanher/Agent_runner` (v3.14.0): feat(ui): añade enriquecimiento por enlaces y warnings de draft.
