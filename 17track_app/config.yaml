@@ -22,7 +22,6 @@ map:
   - config:rw
 
 options:
-  app_api_key: ""
   app_json_limit: "256kb"
 
   bg_enabled: true
@@ -55,7 +54,6 @@ options:
   outlook_imap_refresh_token: ""
 
 schema:
-  app_api_key: str?
   app_json_limit: str?
 
   bg_enabled: bool

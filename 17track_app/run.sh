@@ -3,7 +3,6 @@ set -e
 
 export PORT="8787"
 export DATA_DIR="/data"
-export APP_API_KEY="$(bashio::config 'app_api_key')"
 export APP_JSON_LIMIT="$(bashio::config 'app_json_limit')"
 
 export BG_ENABLED="$(bashio::config 'bg_enabled')"
@@ -39,8 +38,6 @@ export IMAP_DEFAULT_OWNER="unnamed"
 export IMAP_WORKER_STATE_PATH="/data/imap_worker_state.json"
 export IMAP_INGEST_BASE_URL="http://127.0.0.1:${PORT}"
 
-# Optional: share same API key with IMAP ingestion calls to backend.
-export IMAP_INGEST_API_KEY="${APP_API_KEY}"
 
 # Secrets referenced by IMAP_ACCOUNTS_FILE (password_env/client_secret_env/...)
 export IMAP_GMAIL_1_APP_PASSWORD="$(bashio::config 'imap_gmail_1_app_password')"

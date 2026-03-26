@@ -7,7 +7,6 @@ ingress: true
 ingress_port: 8787
 panel_title: "Paquetes IMAP"
 panel_icon: "mdi:package-variant-closed"
-app_api_key: ""
 app_json_limit: "256kb"
 
 bg_enabled: true
@@ -35,7 +34,6 @@ outlook_imap_refresh_token: ""
 ## Variables y comportamiento
 
 - Los logs de la app Node quedan fijos a nivel `info`. La auditoria HA queda activa internamente a nivel `info` con nombre `Paquetes App`; el resumen periodico del scheduler se queda en logs del add-on para no saturar el logbook.
-- `app_api_key`: protege API (excepto `/health` y `/api/_build`), tambien usada por el worker IMAP para `POST /imap/ingest`.
 - `ha_*`: parametros de notificacion + auditoria en Home Assistant.
 - `ha_user_owners_file`: ruta al JSON que mapea `ha_user_id` de Home Assistant a owners visibles en ingress. Si no se cambia, el backend usa `/config/ha_user_owners.json`.
 - `imap_accounts_file`: ruta al JSON de cuentas IMAP (recomendado en `/config`).

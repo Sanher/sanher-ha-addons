@@ -98,7 +98,6 @@ Si hay un problema, revisa primero los logs del add-on y valida:
 
 - fichero `imap_accounts_file` accesible y JSON valido.
 - secretos `password_env` definidos en opciones del add-on.
-- `app_api_key` solo si decides proteger la API tambien fuera de ingress.
 - `ha_url`/`ha_token`/`ha_script` para notificaciones.
 
 
