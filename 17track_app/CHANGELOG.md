@@ -3,6 +3,7 @@
 ## 2.6.2
 
 - Sync upstream `sanher/17Track_app` (v2.6.2): chore(version): bump to version 2.6.2.
+- Sincroniza el worker IMAP empaquetado con la version actual del backend `v2.6.2`.
 
 ## 2.6.1
 
