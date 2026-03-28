@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.6.3
+
+- Sync upstream `sanher/17Track_app` (v2.6.3): chore(version): bump to version 2.6.3.
+- Mantiene sincronizado el worker IMAP empaquetado del add-on con la app.
+
 ## 2.6.2
 
 - Sync upstream `sanher/17Track_app` (v2.6.2): chore(version): bump to version 2.6.2.

@@ -42,6 +42,7 @@ Notas importantes:
 - Si el fichero `imap_accounts_file` no existe o no es valido, el worker registra error y reintenta en el siguiente ciclo.
 - La app esta orientada a IMAP-only; la UI de ingress trabaja sobre paquetes ingeridos desde correo.
 - El mapeo de usuarios HA es un fichero separado. No reutiliza `telegram_access.json`.
+- El add-on empaqueta una copia local de `imap_ingest_worker.py`; debe mantenerse sincronizada con la version publicada de la app backend.
 
 ## Como configurar cuentas IMAP sin exponer secretos en Git
 
