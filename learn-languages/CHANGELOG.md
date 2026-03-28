@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.2.2
+
+- Sync upstream `Sanher/learn-languages` (v1.2.2): feat(ui): añade modal raw y reset de progreso.
+
 ## 1.2.1
 
 - Sync upstream `Sanher/learn-languages` (v1.2.1): fix(ui): mejora audio guiado y carga de extras.
