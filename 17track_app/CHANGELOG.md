@@ -1,5 +1,10 @@
 # Changelog
 
+## 2.6.4
+
+- Deja de sobrescribir el worker IMAP desde el repo padre y usa directamente el que viene en la tag de la app.
+- El `APP_REF` del add-on pasa a ser la unica fuente de verdad para el worker empaquetado.
+
 ## 2.6.3
 
 - Actualiza la referencia del backend a `v2.6.3`.

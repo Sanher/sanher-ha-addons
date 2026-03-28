@@ -48,7 +48,7 @@ Outlook/Hotmail:
 - El add-on ya no expone configuracion visible para Outlook/Hotmail.
 - Si quieres seguir procesando correos de Outlook/Hotmail, redirigelos a una cuenta Gmail que leas por IMAP desde este add-on.
 - Si en `/config/imap_accounts.json` te queda una cuenta Outlook antigua, conviene borrarla o dejar `enabled=false`.
-- Este add-on empaqueta una copia local de `imap_ingest_worker.py`; conviene mantenerla sincronizada con la app backend al subir version.
+- El worker IMAP empaquetado sale directamente de la tag de la app backend. Al subir `APP_REF`, se actualiza tambien el worker de la imagen.
 
 ## Mapeo de usuarios HA por ingress
 
