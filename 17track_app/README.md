@@ -37,11 +37,17 @@ Servidor Node.js para gestionar paquetes desde IMAP con interfaz web via ingress
 ## Configuracion rapida (IMAP)
 
 1. Define `imap_accounts_file: /config/imap_accounts.json`.
-2. Rellena secretos IMAP en opciones (campos `imap_*_password`, `outlook_*`).
+2. Rellena secretos IMAP en opciones (campos `imap_*_password`).
 3. Crea `/config/imap_accounts.json` con referencias `password_env`.
 4. Reinicia add-on y revisa logs.
 
 Nota: si el backend clonado por `APP_REF` aun no expone endpoints `/imap`, el add-on desactiva automaticamente el worker IMAP y lo deja indicado en logs.
+
+Outlook/Hotmail:
+
+- El add-on ya no expone configuracion visible para Outlook/Hotmail.
+- Si quieres seguir procesando correos de Outlook/Hotmail, redirigelos a una cuenta Gmail que leas por IMAP desde este add-on.
+- Si en `/config/imap_accounts.json` te queda una cuenta Outlook antigua, conviene borrarla o dejar `enabled=false`.
 
 ## Mapeo de usuarios HA por ingress
 

@@ -47,11 +47,6 @@ options:
   imap_gmail_3_app_password: ""
   imap_gmail_4_app_password: ""
   imap_gmail_filter_app_password: ""
-  imap_outlook_app_password: ""
-
-  outlook_imap_client_id: ""
-  outlook_imap_client_secret: ""
-  outlook_imap_refresh_token: ""
 
 schema:
   app_json_limit: str?
@@ -79,8 +74,3 @@ schema:
   imap_gmail_3_app_password: password?
   imap_gmail_4_app_password: password?
   imap_gmail_filter_app_password: password?
-  imap_outlook_app_password: password?
-
-  outlook_imap_client_id: str?
-  outlook_imap_client_secret: password?
-  outlook_imap_refresh_token: password?

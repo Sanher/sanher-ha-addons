@@ -25,10 +25,6 @@ imap_gmail_2_app_password: ""
 imap_gmail_3_app_password: ""
 imap_gmail_4_app_password: ""
 imap_gmail_filter_app_password: ""
-imap_outlook_app_password: ""
-outlook_imap_client_id: ""
-outlook_imap_client_secret: ""
-outlook_imap_refresh_token: ""
 ```
 
 ## Variables y comportamiento
@@ -52,8 +48,6 @@ Notas importantes:
 1. En HA, configura secretos en opciones del add-on:
    - `imap_gmail_1_app_password` ... `imap_gmail_4_app_password`
    - `imap_gmail_filter_app_password`
-   - `imap_outlook_app_password` (si usas Outlook por app password)
-   - `outlook_imap_client_id`, `outlook_imap_client_secret`, `outlook_imap_refresh_token` (si usas Outlook OAuth2)
 
 2. Crea `/config/imap_accounts.json` con solo referencias `*_env` y owner por cuenta. Si falta, se usara `unnamed`:
 
@@ -78,13 +72,6 @@ Notas importantes:
       "allowed_sender_domains": ["amazon.es", "amazon.com"],
       "require_dkim_pass": true
     }
-  },
-  {
-    "email": "correo@outlook.com",
-    "owner": "owner_b",
-    "provider": "outlook",
-    "auth": "password",
-    "password_env": "IMAP_OUTLOOK_APP_PASSWORD"
   }
 ]
 ```
@@ -116,7 +103,11 @@ Nota: si `APP_REF` aun apunta a una version sin endpoints `/imap`, el add-on no 
 - verifica `imap_accounts_file` y su JSON.
 - verifica `password_env` contra nombres exportados en el add-on.
 
-2. Si Outlook tiene muchos scam:
+2. Si quieres seguir usando Outlook/Hotmail:
+- configura una redireccion automatica hacia una cuenta Gmail leida por IMAP desde este add-on.
+- si te queda una cuenta Outlook antigua en `/config/imap_accounts.json`, borra esa entrada o dejala con `enabled=false`.
+
+3. Si necesitas endurecer filtros:
 - usa `allowed_sender_domains` y `require_dkim_pass`/`require_spf_pass`.
 - añade `reject_keywords_any` en `filters`.
 

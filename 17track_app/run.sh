@@ -45,10 +45,6 @@ export IMAP_GMAIL_2_APP_PASSWORD="$(bashio::config 'imap_gmail_2_app_password')"
 export IMAP_GMAIL_3_APP_PASSWORD="$(bashio::config 'imap_gmail_3_app_password')"
 export IMAP_GMAIL_4_APP_PASSWORD="$(bashio::config 'imap_gmail_4_app_password')"
 export IMAP_GMAIL_FILTER_APP_PASSWORD="$(bashio::config 'imap_gmail_filter_app_password')"
-export IMAP_OUTLOOK_APP_PASSWORD="$(bashio::config 'imap_outlook_app_password')"
-export OUTLOOK_IMAP_CLIENT_ID="$(bashio::config 'outlook_imap_client_id')"
-export OUTLOOK_IMAP_CLIENT_SECRET="$(bashio::config 'outlook_imap_client_secret')"
-export OUTLOOK_IMAP_REFRESH_TOKEN="$(bashio::config 'outlook_imap_refresh_token')"
 
 backend_supports_imap() {
   [ -f /app/src/index.js ] || return 1
