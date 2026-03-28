@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.6.0
+
+- Sync upstream `sanher/17Track_app` (v2.6.0): fix(email-agent): retira soporte outlook del worker imap.
+
 ## 2.5.1
 
 - Sync upstream `sanher/17Track_app` (v2.5.1): chore(version): bump to version 2.5.1.
