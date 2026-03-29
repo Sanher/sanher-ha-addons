@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.6.5
+
+- Sync upstream `sanher/17Track_app` (v2.6.5): chore(version): bump to version 2.6.5.
+
 ## 2.6.4
 
 - Deja de sobrescribir el worker IMAP desde el repo padre y usa directamente el que viene en la tag de la app.
