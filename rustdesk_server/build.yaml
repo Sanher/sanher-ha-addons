@@ -1,0 +1,8 @@
+build_from:
+  amd64: docker.io/rustdesk/rustdesk-server:1.1.15-amd64
+  aarch64: docker.io/rustdesk/rustdesk-server:1.1.15-arm64v8
+  armv7: docker.io/rustdesk/rustdesk-server:1.1.15-armv7
+labels:
+  org.opencontainers.image.title: "RustDesk Server"
+  org.opencontainers.image.description: "Home Assistant add-on for running RustDesk rendezvous and relay servers"
+  org.opencontainers.image.source: "https://github.com/Sanher/sanher-ha-addons"

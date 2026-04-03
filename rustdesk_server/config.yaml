@@ -1,0 +1,30 @@
+name: RustDesk Server
+version: "0.0.1"
+slug: rustdesk_server
+description: Servidor RustDesk OSS para Home Assistant con hbbs y hbbr persistidos en /data
+url: "https://github.com/Sanher/sanher-ha-addons/tree/main/rustdesk_server"
+arch:
+  - amd64
+  - aarch64
+  - armv7
+startup: services
+boot: auto
+init: false
+host_network: false
+
+map:
+  - data:rw
+
+ports:
+  21115/tcp: 21115
+  21116/tcp: 21116
+  21116/udp: 21116
+  21117/tcp: 21117
+ports_description:
+  21115/tcp: RustDesk ID server
+  21116/tcp: RustDesk NAT traversal TCP
+  21116/udp: RustDesk NAT traversal UDP
+  21117/tcp: RustDesk relay server
+
+options: {}
+schema: {}

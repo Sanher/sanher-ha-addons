@@ -15,3 +15,5 @@ En Home Assistant:
 - `17Track App`: servidor Node para gestion de paquetes y refresco en background.
 
 - `Agent Runner`: runner de automatizaciones IA/web con API y persistencia en /data.
+
+- `RustDesk Server`: servidor RustDesk OSS minimalista para Home Assistant, sin ingress y con persistencia en /data.

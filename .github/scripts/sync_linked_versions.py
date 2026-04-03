@@ -30,6 +30,13 @@ ADDONS = [
         "dockerfile": Path("learn-languages/Dockerfile"),
         "changelog": Path("learn-languages/CHANGELOG.md"),
     },
+    {
+        "name": "rustdesk_server",
+        "repo": "Sanher/Rustdesk_wrapper",
+        "config": Path("rustdesk_server/config.yaml"),
+        "dockerfile": Path("rustdesk_server/Dockerfile"),
+        "changelog": Path("rustdesk_server/CHANGELOG.md"),
+    },
 ]
 
 TAG_RE = re.compile(r"^v?(\d+)\.(\d+)(?:\.(\d+))?$")
@@ -161,7 +168,7 @@ def update_addon(addon: Dict[str, Any]) -> Tuple[bool, str, Version]:
     current_config = config_match.group(1)
     current_ref = docker_match.group(1).strip()
     current_ref_no_v = current_ref[1:] if current_ref.startswith("v") else current_ref
-    target_ref = f"v{latest.text}"
+    target_ref = upstream.tag_name
 
     changed = False
     if current_config != latest.text:
