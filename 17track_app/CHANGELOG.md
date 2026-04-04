@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.6.10
+
+- Sync upstream `sanher/17Track_app` (v2.6.10): chore(version): bump to version 2.6.10.
+
 ## 2.6.9
 
 - Sync upstream `sanher/17Track_app` (v2.6.9): chore(version): bump to version 2.6.9.
