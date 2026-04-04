@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.8
+
+- Sync upstream `Sanher/Rustdesk_wrapper` (0.0.8): docs(ui): documenta conectividad del wrapper.
+
 ## 0.0.6
 
 - Añade `relay_host` como opcion opcional en la UI del add-on.
