@@ -36,6 +36,7 @@ ADDONS = [
         "config": Path("rustdesk_server/config.yaml"),
         "dockerfile": Path("rustdesk_server/Dockerfile"),
         "changelog": Path("rustdesk_server/CHANGELOG.md"),
+        "sync_config_version": False,
     },
 ]
 
@@ -171,7 +172,7 @@ def update_addon(addon: Dict[str, Any]) -> Tuple[bool, str, Version]:
     target_ref = upstream.tag_name
 
     changed = False
-    if current_config != latest.text:
+    if addon.get("sync_config_version", True) and current_config != latest.text:
         config_content = replace_once(
             r'^version:\s+"[^"]+"\s*$',
             f'version: "{latest.text}"',

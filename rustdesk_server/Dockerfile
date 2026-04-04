@@ -23,7 +23,7 @@ RUN set -eu; \
 
 WORKDIR /data
 
-COPY --chmod=755 --from=source /src/rustdesk_server/run.sh /opt/rustdesk_wrapper_run.sh
+COPY --chmod=755 --from=source /src/run.sh /opt/rustdesk_wrapper_run.sh
 COPY --chmod=755 run.sh /run.sh
 
 ENTRYPOINT ["/bin/sh", "/run.sh"]
