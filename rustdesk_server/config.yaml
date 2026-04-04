@@ -1,7 +1,7 @@
 name: RustDesk Server
 version: "0.0.2"
 slug: rustdesk_server
-description: Servidor RustDesk OSS para Home Assistant con hbbs y hbbr persistidos en /data
+description: RustDesk OSS server for Home Assistant with persistent data in /data
 url: "https://github.com/Sanher/sanher-ha-addons/tree/main/rustdesk_server"
 arch:
   - amd64

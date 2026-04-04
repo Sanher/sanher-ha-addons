@@ -1,14 +1,14 @@
 # RustDesk Server (Home Assistant add-on)
 
-Add-on minimo para ejecutar un servidor RustDesk OSS dentro de Home Assistant.
+Lightweight Home Assistant add-on for running the RustDesk OSS server.
 
-La identidad visible del add-on se mantiene como `RustDesk Server`, pero su runtime se obtiene desde el repo upstream `Sanher/Rustdesk_wrapper` versionado por tag.
+This add-on runs the RustDesk rendezvous and relay services with persistent data stored in `/data`.
 
-## Alcance de esta primera version
+## Features
 
-- Arranca `hbbs` y `hbbr` en un unico contenedor.
-- Persiste claves y datos en `/data`.
-- No usa `ingress`.
-- No intenta resolver por si mismo la exposicion externa del servicio.
+- Runs `hbbs` and `hbbr` in a single container.
+- Persists keys and runtime data in `/data`.
+- Does not use Home Assistant Ingress.
+- Keeps the setup focused on the RustDesk server itself.
 
-Si ya accedes a Home Assistant mediante Tailscale, VPN o apertura de puertos, este add-on solo se encarga de levantar el servidor RustDesk.
+If you already expose your Home Assistant host through Tailscale, a VPN, or direct port forwarding, this add-on can provide the RustDesk server component without any extra web UI layer.

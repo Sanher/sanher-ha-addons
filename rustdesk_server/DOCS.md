@@ -1,51 +1,49 @@
 # RustDesk Server
 
-Servidor RustDesk OSS para Home Assistant sin `ingress` y con configuracion minima.
+RustDesk OSS server for Home Assistant with a minimal, non-Ingress setup.
 
-El add-on sigue llamandose `RustDesk Server` en Home Assistant, pero el runtime se sincroniza desde el repo upstream `Sanher/Rustdesk_wrapper` por tag.
+## What it does
 
-## Que hace
+This add-on starts:
 
-Este add-on arranca:
+- `hbbs`: the RustDesk ID / rendezvous service.
+- `hbbr`: the RustDesk relay service.
 
-- `hbbs`: servidor de identificacion / rendezvous.
-- `hbbr`: servidor de relay.
+Both processes share `/data`, which is where RustDesk stores and reuses its keys.
 
-Ambos procesos comparten `/data`, que es donde RustDesk guarda y reutiliza sus claves.
-
-## Puertos expuestos
+## Exposed ports
 
 - `21115/tcp`
 - `21116/tcp`
 - `21116/udp`
 - `21117/tcp`
 
-Esta primera version no expone `21118` ni `21119`, porque no incluye consola web ni cliente web.
+This add-on does not expose `21118` or `21119`, because it does not include the optional web console or web client.
 
-## Instalacion
+## Installation
 
-1. Añade el repositorio `https://github.com/Sanher/sanher-ha-addons` a Home Assistant.
-2. Instala `RustDesk Server`.
-3. Arranca el add-on.
-4. Abre los logs del add-on y copia la linea `Clave publica: ...`.
+1. Add this add-on repository to Home Assistant.
+2. Install `RustDesk Server`.
+3. Start the add-on.
+4. Open the add-on logs and copy the `Public key: ...` line.
 
-En el primer arranque RustDesk genera la clave publica y la deja tambien en `/data/public_key.txt`.
+On first start, RustDesk generates the server key pair and also writes the public key to `/data/public_key.txt`.
 
-## Configuracion del cliente RustDesk
+## RustDesk client configuration
 
-Segun la documentacion oficial de RustDesk, en el cliente puedes rellenar solo `ID Server` y `Key`; `Relay` se puede dejar vacio porque RustDesk lo deduce automaticamente.
+According to the official RustDesk documentation, you can usually fill in `ID Server` and `Key` only; `Relay` can often be left empty because the client derives it automatically.
 
-Valores recomendados:
+Recommended values:
 
-- `ID Server`: tu dominio o IP publica, por ejemplo `rustdesk.midominio.com` o `mi-ip-publica:21116`
-- `Key`: la clave publica mostrada en los logs del add-on
-- `Relay`: vacio
+- `ID Server`: your public domain or IP address, for example `rustdesk.example.com` or `your-public-ip:21116`
+- `Key`: the public key shown in the add-on logs
+- `Relay`: empty
 
-## Alcance de red
+## Network scope
 
-Este add-on no configura red externa por ti. Para usarlo desde fuera de tu LAN necesitas resolver la conectividad por otro medio, por ejemplo:
+This add-on does not configure external networking for you. To use it outside your local network, you need to provide connectivity separately, for example through:
 
-- Tailscale o VPN equivalente
-- apertura de puertos y DNS publico
+- Tailscale or another VPN
+- Port forwarding and public DNS
 
-La parte de funcionamiento sin Tailscale y con mas automatizacion de red queda fuera de esta primera entrega.
+Automated public exposure without Tailscale is intentionally out of scope for this initial release.
