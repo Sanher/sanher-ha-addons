@@ -26,5 +26,7 @@ ports_description:
   21116/udp: RustDesk NAT traversal UDP
   21117/tcp: RustDesk relay server
 
-options: {}
-schema: {}
+options:
+  public_host: ""
+schema:
+  public_host: str?

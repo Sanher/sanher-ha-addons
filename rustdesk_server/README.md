@@ -10,5 +10,16 @@ This add-on runs the RustDesk rendezvous and relay services with persistent data
 - Persists keys and runtime data in `/data`.
 - Does not use Home Assistant Ingress.
 - Keeps the setup focused on the RustDesk server itself.
+- Exposes a `public_host` option for the public hostname or IP used by RustDesk clients.
 
 If you already expose your Home Assistant host through Tailscale, a VPN, or direct port forwarding, this add-on can provide the RustDesk server component without any extra web UI layer.
+
+## public_host
+
+Use `public_host` to store the public hostname or IP address that RustDesk clients should use.
+
+Example:
+
+- `rustdesk.example.duckdns.org`
+
+If configured, the add-on logs will show the recommended RustDesk client values for `ID Server`, `Key`, and `Relay Server`.

@@ -20,6 +20,16 @@ Both processes share `/data`, which is where RustDesk stores and reuses its keys
 
 This add-on does not expose `21118` or `21119`, because it does not include the optional web console or web client.
 
+## Add-on option: public_host
+
+The add-on exposes a `public_host` option in the Home Assistant UI.
+
+Use it for the public hostname or IP address that RustDesk clients should connect to.
+
+Example:
+
+- `rustdesk.example.duckdns.org`
+
 ## Installation
 
 1. Add this add-on repository to Home Assistant.
@@ -38,6 +48,12 @@ Recommended values:
 - `ID Server`: your public domain or IP address, for example `rustdesk.example.com` or `your-public-ip:21116`
 - `Key`: the public key shown in the add-on logs
 - `Relay`: empty
+
+If `public_host` is configured, the add-on logs will print the recommended client setup automatically:
+
+- `ID Server: <public_host>`
+- `Key: <public_key>`
+- `Relay Server: <public_host>` (optional on most clients)
 
 ## Network scope
 
