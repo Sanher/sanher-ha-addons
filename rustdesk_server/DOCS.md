@@ -20,7 +20,7 @@ Both processes share `/data`, which is where RustDesk stores and reuses its keys
 
 This add-on does not expose `21118` or `21119`, because it does not include the optional web console or web client.
 
-## Add-on option: public_host
+## Add-on options: public_host and relay_host
 
 The add-on exposes a `public_host` option in the Home Assistant UI.
 
@@ -29,6 +29,14 @@ Use it for the public hostname or IP address that RustDesk clients should connec
 Example:
 
 - `rustdesk.example.duckdns.org`
+
+The add-on also exposes an optional `relay_host` field.
+
+Use `relay_host` only if your relay hostname or IP differs from the main public host.
+
+Example:
+
+- `relay.example.duckdns.org`
 
 ## Installation
 
@@ -54,6 +62,14 @@ If `public_host` is configured, the add-on logs will print the recommended clien
 - `ID Server: <public_host>`
 - `Key: <public_key>`
 - `Relay Server: <public_host>` (optional on most clients)
+
+If `relay_host` is configured, the add-on logs will instead print:
+
+- `ID Server: <public_host>`
+- `Key: <public_key>`
+- `Relay Server: <relay_host>` (optional on most clients)
+
+If `relay_host` is set but `public_host` is empty, the add-on still starts but prints a warning because that is not the recommended RustDesk client configuration.
 
 ## Network scope
 

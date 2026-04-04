@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.0.6
+
+- Añade `relay_host` como opcion opcional en la UI del add-on.
+- Mantiene compatibilidad con `public_host` y usa `relay_host` solo cuando el relay difiere del host principal.
+
 ## 0.0.5
 
 - Corrige la referencia del runtime upstream para usar `Rustdesk_wrapper` `0.0.4`.
