@@ -1,6 +1,6 @@
 ARG BUILD_FROM=docker.io/library/alpine:3.21
 ARG APP_REPO=https://github.com/Sanher/Rustdesk_wrapper.git
-ARG APP_REF=0.0.4
+ARG APP_REF=0.0.5
 
 FROM alpine/git:2.47.2 AS source
 ARG APP_REPO
