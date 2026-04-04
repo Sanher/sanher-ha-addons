@@ -1,3 +1,4 @@
+ARG BUILD_FROM
 ARG APP_REPO=https://github.com/Sanher/Rustdesk_wrapper.git
 ARG APP_REF=0.0.1
 
@@ -6,7 +7,6 @@ ARG APP_REPO
 ARG APP_REF
 RUN git clone --depth 1 --branch ${APP_REF} ${APP_REPO} /src
 
-ARG BUILD_FROM
 FROM $BUILD_FROM
 
 WORKDIR /data
