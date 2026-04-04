@@ -36,7 +36,6 @@ ADDONS = [
         "config": Path("rustdesk_server/config.yaml"),
         "dockerfile": Path("rustdesk_server/Dockerfile"),
         "changelog": Path("rustdesk_server/CHANGELOG.md"),
-        "sync_config_version": False,
     },
 ]
 
