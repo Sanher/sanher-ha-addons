@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.0.5
+
+- Corrige la referencia del runtime upstream para usar `Rustdesk_wrapper` `0.0.4`.
+- Mantiene el add-on padre en `0.0.5` para forzar refresco de metadata en Home Assistant.
+
 ## 0.0.4
 
 - Adapta el add-on al runtime canonico en la raiz de `Rustdesk_wrapper`.
