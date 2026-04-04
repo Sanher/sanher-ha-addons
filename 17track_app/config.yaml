@@ -1,7 +1,7 @@
 name: "17Track App"
 slug: "17track_app"
 description: "Servidor 17Track (Node) para paquetes + background refresher + worker IMAP"
-version: "2.6.8"
+version: "2.6.9"
 arch:
   - amd64
   - aarch64
