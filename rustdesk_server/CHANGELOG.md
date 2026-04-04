@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.3
+
+- Bump version to force Home Assistant to refresh the add-on options UI.
+
 ## 0.0.2
 
 - Fix the build by using a final image with a shell and copying the official RustDesk binaries from the upstream image.
