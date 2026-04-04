@@ -15,6 +15,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -30,6 +32,8 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add agent_runner/config.yaml agent_runner/Dockerfile agent_runner/CHANGELOG.md 17track_app/config.yaml 17track_app/Dockerfile 17track_app/CHANGELOG.md learn-languages/config.yaml learn-languages/Dockerfile learn-languages/CHANGELOG.md rustdesk_server/config.yaml rustdesk_server/Dockerfile rustdesk_server/CHANGELOG.md
+          git add -A
           git commit -m "${{ steps.sync.outputs.commit_message }}"
+          git fetch origin main
+          git rebase origin/main
           git push origin HEAD:main
