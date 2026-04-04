@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.0.4
+
+- Adapta el add-on al runtime canonico en la raiz de `Rustdesk_wrapper`.
+- Mantiene `public_host` y el resto de la logica especifica de Home Assistant en el repo padre.
+
 ## 0.0.3
 
 - Bump version to force Home Assistant to refresh the add-on options UI.
