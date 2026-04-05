@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.2.3
+
+- Sync upstream `Sanher/learn-languages` (v1.2.3): fix(api): ajusta el reintento dinamico del examen semanal.
+
 ## 1.2.2
 
 - Sync upstream `Sanher/learn-languages` (v1.2.2): feat(ui): añade modal raw y reset de progreso.
