@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.14.4
+
+- Sync upstream `Sanher/Agent_runner` (v3.14.4): chore(version): bump to version 3.14.4.
+
 ## 3.14.3
 
 - Sync upstream `Sanher/Agent_runner` (v3.14.3): fix(ui): evita el prefijo mejora en enhancement frontend.
