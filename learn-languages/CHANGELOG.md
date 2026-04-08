@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.2.4
+
+- Sync upstream `Sanher/learn-languages` (v1.2.4): fix(ui): muestra el examen semanal de forma manual.
+
 ## 1.2.3
 
 - Sync upstream `Sanher/learn-languages` (v1.2.3): fix(api): ajusta el reintento dinamico del examen semanal.

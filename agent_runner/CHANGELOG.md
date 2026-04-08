@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.14.3
+
+- Sync upstream `Sanher/Agent_runner` (v3.14.3): fix(ui): evita el prefijo mejora en enhancement frontend.
+
 ## 3.14.1
 
 - Sync upstream `Sanher/Agent_runner` (v3.14.1): fix(ui): corrige bloqueo del script compartido.

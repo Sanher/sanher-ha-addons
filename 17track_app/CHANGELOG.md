@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.6.11
+
+- Sync upstream `sanher/17Track_app` (v2.6.11): fix(email-agent): soporta mailboxes por cuenta imap.
+
 ## 2.6.10
 
 - Sync upstream `sanher/17Track_app` (v2.6.10): chore(version): bump to version 2.6.10.
