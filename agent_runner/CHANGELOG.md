@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.14.6
+
+- Sync upstream `Sanher/Agent_runner` (v3.14.6): fix(api): corrige parseo y parent en issue agent.
+
 ## 3.14.5
 
 - Sync upstream `Sanher/Agent_runner` (v3.14.5): chore(version): bump to version 3.14.5.
