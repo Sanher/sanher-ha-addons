@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.3.1
+
+- Sync upstream `Sanher/learn-languages` (v1.3.1): fix(ui): ajusta revision y nomenclatura del examen de rango.
+
 ## 1.2.5
 
 - Sync upstream `Sanher/learn-languages` (v1.2.5): fix(ui): ajusta ayudas de guided pronunciation.
