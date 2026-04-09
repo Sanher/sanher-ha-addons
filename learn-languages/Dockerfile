@@ -9,7 +9,7 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
 
 WORKDIR /app
 
-ARG APP_REF=v1.2.4
+ARG APP_REF=v1.2.5
 ARG APP_REPO=https://github.com/Sanher/learn-languages.git
 
 RUN apk add --no-cache git python3 py3-pip \

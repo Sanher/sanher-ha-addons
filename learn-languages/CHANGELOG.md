@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.2.5
+
+- Sync upstream `Sanher/learn-languages` (v1.2.5): fix(ui): ajusta ayudas de guided pronunciation.
+
 ## 1.2.4
 
 - Sync upstream `Sanher/learn-languages` (v1.2.4): fix(ui): muestra el examen semanal de forma manual.
