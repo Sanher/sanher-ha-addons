@@ -1,4 +1,4 @@
-ARG BUILD_FROM
+ARG BUILD_FROM=docker.io/library/node:20-bookworm
 FROM $BUILD_FROM
 
 ENV DEBIAN_FRONTEND=noninteractive \
