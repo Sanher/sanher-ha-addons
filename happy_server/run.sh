@@ -203,7 +203,7 @@ export SEED="$SEED_VALUE"
 log "PUBLIC_URL configurada en ${PUBLIC_URL}"
 log "Ejecutando migraciones Prisma"
 cd "$APP_DIR"
-./node_modules/.bin/prisma --schema packages/happy-server/prisma/schema.prisma migrate deploy
+./node_modules/.bin/prisma migrate deploy --schema packages/happy-server/prisma/schema.prisma
 
 log "Arrancando Happy Server en el puerto interno ${APP_PORT}"
 yarn --cwd packages/happy-server start &
