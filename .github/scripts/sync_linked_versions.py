@@ -37,6 +37,13 @@ ADDONS = [
         "dockerfile": Path("rustdesk_server/Dockerfile"),
         "changelog": Path("rustdesk_server/CHANGELOG.md"),
     },
+    {
+        "name": "happy_server",
+        "repo": "Sanher/Happy_server",
+        "config": Path("happy_server/config.yaml"),
+        "changelog": Path("happy_server/CHANGELOG.md"),
+        "sync_docker_ref": False,
+    },
 ]
 
 TAG_RE = re.compile(r"^v?(\d+)\.(\d+)(?:\.(\d+))?$")
@@ -154,19 +161,21 @@ def update_addon(addon: Dict[str, Any]) -> Tuple[bool, str, Version]:
     latest = upstream.version
 
     config_path = addon["config"]
-    docker_path = addon["dockerfile"]
+    docker_path = addon.get("dockerfile")
     changelog_path = addon["changelog"]
 
     config_content = config_path.read_text(encoding="utf-8")
-    docker_content = docker_path.read_text(encoding="utf-8")
+    docker_content = docker_path.read_text(encoding="utf-8") if docker_path else None
 
     config_match = re.search(r'^version:\s+"([^"]+)"\s*$', config_content, flags=re.MULTILINE)
-    docker_match = re.search(r"^ARG APP_REF=(.+)$", docker_content, flags=re.MULTILINE)
-    if not config_match or not docker_match:
+    docker_match = re.search(r"^ARG APP_REF=(.+)$", docker_content, flags=re.MULTILINE) if docker_content else None
+    if not config_match:
         raise RuntimeError(f"No se pudo leer versión actual de {addon['name']}")
+    if docker_path and not docker_match:
+        raise RuntimeError(f"No se pudo leer ARG APP_REF de {addon['name']}")
 
     current_config = config_match.group(1)
-    current_ref = docker_match.group(1).strip()
+    current_ref = docker_match.group(1).strip() if docker_match else ""
     current_ref_no_v = current_ref[1:] if current_ref.startswith("v") else current_ref
     target_ref = upstream.tag_name
 
@@ -180,18 +189,20 @@ def update_addon(addon: Dict[str, Any]) -> Tuple[bool, str, Version]:
         )
         changed = True
 
-    if current_ref_no_v != latest.text or current_ref != target_ref:
-        docker_content = replace_once(
-            r"^ARG APP_REF=.+$",
-            f"ARG APP_REF={target_ref}",
-            docker_content,
-            docker_path,
-        )
-        changed = True
+    if addon.get("sync_docker_ref", True):
+        if current_ref_no_v != latest.text or current_ref != target_ref:
+            docker_content = replace_once(
+                r"^ARG APP_REF=.+$",
+                f"ARG APP_REF={target_ref}",
+                docker_content,
+                docker_path,
+            )
+            changed = True
 
     if changed:
         config_path.write_text(config_content, encoding="utf-8")
-        docker_path.write_text(docker_content, encoding="utf-8")
+        if docker_path and docker_content is not None:
+            docker_path.write_text(docker_content, encoding="utf-8")
         update_changelog(
             path=changelog_path,
             version_text=latest.text,
