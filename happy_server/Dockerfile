@@ -1,8 +1,7 @@
 ARG BUILD_FROM=docker.io/library/node:20-bookworm
 FROM $BUILD_FROM
 
-ENV DEBIAN_FRONTEND=noninteractive \
-    NODE_ENV=production
+ENV DEBIAN_FRONTEND=noninteractive
 
 WORKDIR /opt/happy
 
@@ -27,10 +26,12 @@ RUN apt-get update \
     && corepack prepare yarn@1.22.22 --activate \
     && git clone ${APP_REPO} /opt/happy \
     && git -C /opt/happy checkout ${APP_REF} \
-    && yarn install --frozen-lockfile --ignore-engines \
+    && SKIP_HAPPY_WIRE_BUILD=1 yarn install --frozen-lockfile --ignore-engines \
     && yarn workspace @slopus/happy-wire build \
     && yarn workspace happy-server build \
     && rm -rf /opt/happy/.git
+
+ENV NODE_ENV=production
 
 COPY run.sh /run.sh
 RUN chmod +x /run.sh
