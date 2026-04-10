@@ -107,7 +107,7 @@ start_postgres() {
 
 ensure_postgres_database() {
   log "Asegurando usuario y base de datos internos"
-  gosu postgres "$PSQL" -v ON_ERROR_STOP=1 --dbname postgres <<SQL
+  gosu postgres "$PSQL" -h /tmp -p "$PG_PORT" -v ON_ERROR_STOP=1 --dbname postgres <<SQL
 DO $$
 BEGIN
   IF NOT EXISTS (SELECT 1 FROM pg_roles WHERE rolname = '${INTERNAL_POSTGRES_USER}') THEN
