@@ -108,7 +108,7 @@ start_postgres() {
 ensure_postgres_database() {
   log "Asegurando usuario y base de datos internos"
   gosu postgres "$PSQL" -h /tmp -p "$PG_PORT" -v ON_ERROR_STOP=1 --dbname postgres <<SQL
-DO $$
+DO \$\$
 BEGIN
   IF NOT EXISTS (SELECT 1 FROM pg_roles WHERE rolname = '${INTERNAL_POSTGRES_USER}') THEN
     CREATE ROLE ${INTERNAL_POSTGRES_USER} LOGIN PASSWORD '${INTERNAL_POSTGRES_PASSWORD}';
@@ -116,7 +116,7 @@ BEGIN
     ALTER ROLE ${INTERNAL_POSTGRES_USER} WITH LOGIN PASSWORD '${INTERNAL_POSTGRES_PASSWORD}';
   END IF;
 END
-$$;
+\$\$;
 SELECT 'CREATE DATABASE ${INTERNAL_POSTGRES_DB} OWNER ${INTERNAL_POSTGRES_USER}'
 WHERE NOT EXISTS (SELECT FROM pg_database WHERE datname = '${INTERNAL_POSTGRES_DB}')\gexec
 SQL
