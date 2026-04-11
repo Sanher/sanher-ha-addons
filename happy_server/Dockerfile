@@ -8,6 +8,8 @@ WORKDIR /opt/happy
 ARG APP_REPO=https://github.com/slopus/happy.git
 ARG APP_REF=279640302e00fefdeab2eca747947a0b74e5dfa7
 
+COPY patches /tmp/happy-patches
+
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
         build-essential \
@@ -26,10 +28,11 @@ RUN apt-get update \
     && corepack prepare yarn@1.22.22 --activate \
     && git clone ${APP_REPO} /opt/happy \
     && git -C /opt/happy checkout ${APP_REF} \
+    && git -C /opt/happy apply /tmp/happy-patches/fix-delay-abort-listener.patch \
     && SKIP_HAPPY_WIRE_BUILD=1 yarn install --frozen-lockfile --ignore-engines \
     && yarn workspace @slopus/happy-wire build \
     && yarn workspace happy-server build \
-    && rm -rf /opt/happy/.git
+    && rm -rf /opt/happy/.git /tmp/happy-patches
 
 ENV NODE_ENV=production
 

@@ -1,0 +1,38 @@
+diff --git a/packages/happy-server/sources/utils/delay.ts b/packages/happy-server/sources/utils/delay.ts
+index 8e08be5..d8edd90 100644
+--- a/packages/happy-server/sources/utils/delay.ts
++++ b/packages/happy-server/sources/utils/delay.ts
+@@ -10,16 +10,29 @@ export async function delay(ms: number, signal?: AbortSignal): Promise<void> {
+     }
+
+     await new Promise<void>((resolve) => {
+-        const timeout = setTimeout(resolve, ms);
++        let settled = false;
++        let abortHandler: () => void = () => {};
++
++        const cleanup = () => signal.removeEventListener('abort', abortHandler);
++        const resolveOnce = () => {
++            if (settled) {
++                return;
++            }
++            settled = true;
++            cleanup();
++            resolve();
++        };
++
++        const timeout = setTimeout(resolveOnce, ms);
+
+-        const abortHandler = () => {
++        abortHandler = () => {
+             clearTimeout(timeout);
+-            resolve();
++            resolveOnce();
+         };
+
+         if (signal.aborted) {
+             clearTimeout(timeout);
+-            resolve();
++            resolveOnce();
+         } else {
+             signal.addEventListener('abort', abortHandler, { once: true });
+         }
