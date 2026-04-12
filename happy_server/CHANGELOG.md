@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.6
+
+- Hace mas robusta la inyeccion del fix de `delay.ts` usando reemplazos por fragmentos en vez de depender de un bloque completo.
+- Evita que el build falle si el upstream conserva la misma logica pero cambia espacios o lineas en blanco.
+
 ## 0.1.5
 
 - Sustituye `git apply` por un parche controlado en Python para que el build del addon no falle al inyectar el fix de `delay.ts`.
