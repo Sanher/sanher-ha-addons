@@ -4,24 +4,17 @@ from pathlib import Path
 path = Path('/opt/happy/packages/happy-server/sources/utils/delay.ts')
 content = path.read_text(encoding='utf-8').replace('\r\n', '\n')
 
-old = """    await new Promise<void>((resolve) => {
-        const timeout = setTimeout(resolve, ms);
 
-        const abortHandler = () => {
-            clearTimeout(timeout);
-            resolve();
-        };
+def replace_once(source: str, old: str, new: str) -> str:
+    if old not in source:
+        raise SystemExit(f'No se pudo localizar el fragmento esperado en delay.ts: {old}')
+    return source.replace(old, new, 1)
 
-        if (signal.aborted) {
-            clearTimeout(timeout);
-            resolve();
-        } else {
-            signal.addEventListener('abort', abortHandler, { once: true });
-        }
-    });"""
 
-new = """    await new Promise<void>((resolve) => {
-        let settled = false;
+content = replace_once(
+    content,
+    "        const timeout = setTimeout(resolve, ms);",
+    """        let settled = false;
         let abortHandler: () => void = () => {};
 
         const cleanup = () => signal.removeEventListener('abort', abortHandler);
@@ -34,23 +27,23 @@ new = """    await new Promise<void>((resolve) => {
             resolve();
         };
 
-        const timeout = setTimeout(resolveOnce, ms);
+        const timeout = setTimeout(resolveOnce, ms);""",
+)
+content = replace_once(
+    content,
+    "        const abortHandler = () => {",
+    "        abortHandler = () => {",
+)
+content = replace_once(
+    content,
+    "            resolve();\n        };",
+    "            resolveOnce();\n        };",
+)
+content = replace_once(
+    content,
+    "            resolve();\n        } else {",
+    "            resolveOnce();\n        } else {",
+)
 
-        abortHandler = () => {
-            clearTimeout(timeout);
-            resolveOnce();
-        };
-
-        if (signal.aborted) {
-            clearTimeout(timeout);
-            resolveOnce();
-        } else {
-            signal.addEventListener('abort', abortHandler, { once: true });
-        }
-    });"""
-
-if old not in content:
-    raise SystemExit('No se pudo localizar el bloque esperado en delay.ts para aplicar el fix de listeners abort')
-
-path.write_text(content.replace(old, new, 1), encoding='utf-8')
+path.write_text(content, encoding='utf-8')
 print('Patched delay.ts abort listener cleanup')
