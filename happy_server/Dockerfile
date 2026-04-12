@@ -28,7 +28,7 @@ RUN apt-get update \
     && corepack prepare yarn@1.22.22 --activate \
     && git clone ${APP_REPO} /opt/happy \
     && git -C /opt/happy checkout ${APP_REF} \
-    && git -C /opt/happy apply /tmp/happy-patches/fix-delay-abort-listener.patch \
+    && python3 /tmp/happy-patches/fix-delay-abort-listener.py \
     && SKIP_HAPPY_WIRE_BUILD=1 yarn install --frozen-lockfile --ignore-engines \
     && yarn workspace @slopus/happy-wire build \
     && yarn workspace happy-server build \
