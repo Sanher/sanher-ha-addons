@@ -41,8 +41,8 @@ ADDONS = [
         "name": "happy_server",
         "repo": "Sanher/Happy_server",
         "config": Path("happy_server/config.yaml"),
+        "dockerfile": Path("happy_server/Dockerfile"),
         "changelog": Path("happy_server/CHANGELOG.md"),
-        "sync_docker_ref": False,
     },
     {
         "name": "omnitools",

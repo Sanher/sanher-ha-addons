@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.8
+
+- Sync upstream `Sanher/Happy_server` (0.1.8): docs(api): documenta contrato del wrapper source.
+
 ## 0.1.6
 
 - Hace mas robusta la inyeccion del fix de `delay.ts` usando reemplazos por fragmentos en vez de depender de un bloque completo.

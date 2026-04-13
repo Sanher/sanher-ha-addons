@@ -1,5 +1,5 @@
 name: Happy Server
-version: "0.1.6"
+version: "0.1.8"
 slug: happy_server
 description: Self-hosted Happy Server para Home Assistant con PostgreSQL y Redis internos
 url: "https://github.com/Sanher/sanher-ha-addons/tree/main/happy_server"
