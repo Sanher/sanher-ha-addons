@@ -136,6 +136,42 @@ def fetch_latest_upstream(repo: str) -> UpstreamInfo:
     )
 
 
+def fetch_tagged_upstream(
+    repo: str,
+    tag_name: str,
+    commit_sha: Optional[str] = None,
+    commit_message: Optional[str] = None,
+) -> UpstreamInfo:
+    version = parse_version(tag_name)
+    if version is None:
+        raise RuntimeError(f"Tag no válida para sincronización en {repo}: {tag_name}")
+
+    resolved_sha = commit_sha
+    resolved_message = normalize_commit_subject(commit_message or "")
+
+    if not resolved_sha:
+        tag_payload = github_get_json(f"https://api.github.com/repos/{repo}/tags?per_page=100")
+        tag_item = next((item for item in tag_payload if item.get("name") == tag_name), None)
+        if not tag_item:
+            raise RuntimeError(f"No se encontró la tag {tag_name} en {repo}")
+        resolved_sha = tag_item.get("commit", {}).get("sha")
+
+    if not resolved_sha:
+        raise RuntimeError(f"No se pudo resolver el commit SHA de {tag_name} en {repo}")
+
+    if not resolved_message:
+        commit_payload = github_get_json(f"https://api.github.com/repos/{repo}/commits/{resolved_sha}")
+        raw_message = commit_payload.get("commit", {}).get("message", "")
+        resolved_message = normalize_commit_subject(raw_message) or "Sin mensaje de commit"
+
+    return UpstreamInfo(
+        version=version,
+        tag_name=tag_name,
+        commit_sha=resolved_sha,
+        commit_message=resolved_message,
+    )
+
+
 def replace_once(pattern: str, repl: str, content: str, path: Path) -> str:
     result, count = re.subn(pattern, repl, content, count=1, flags=re.MULTILINE)
     if count == 0:
@@ -164,8 +200,8 @@ def update_changelog(path: Path, version_text: str, repo: str, tag_name: str, co
     return True
 
 
-def update_addon(addon: Dict[str, Any]) -> Tuple[bool, str, Version]:
-    upstream = fetch_latest_upstream(addon["repo"])
+def update_addon(addon: Dict[str, Any], upstream: Optional[UpstreamInfo] = None) -> Tuple[bool, str, Version]:
+    upstream = upstream or fetch_latest_upstream(addon["repo"])
     latest = upstream.version
 
     config_path = addon["config"]
@@ -224,6 +260,33 @@ def update_addon(addon: Dict[str, Any]) -> Tuple[bool, str, Version]:
     return changed, addon["name"], latest
 
 
+def get_dispatch_target() -> Optional[Dict[str, str]]:
+    repo = os.getenv("SYNC_TARGET_REPO", "").strip()
+    tag = os.getenv("SYNC_TARGET_TAG", "").strip()
+    sha = os.getenv("SYNC_TARGET_SHA", "").strip()
+    commit_message = os.getenv("SYNC_TARGET_COMMIT_MESSAGE", "").strip()
+
+    if not repo and not tag:
+        return None
+    if not repo or not tag:
+        raise RuntimeError("SYNC_TARGET_REPO y SYNC_TARGET_TAG deben viajar juntos")
+
+    return {
+        "repo": repo,
+        "tag": tag,
+        "sha": sha,
+        "commit_message": commit_message,
+    }
+
+
+def find_addon_by_repo(repo: str) -> Dict[str, Any]:
+    repo_key = repo.lower()
+    for addon in ADDONS:
+        if addon["repo"].lower() == repo_key:
+            return addon
+    raise RuntimeError(f"No se encontró addon configurado para repo {repo}")
+
+
 def write_output(name: str, value: str) -> None:
     output_path = os.getenv("GITHUB_OUTPUT")
     if not output_path:
@@ -234,13 +297,26 @@ def write_output(name: str, value: str) -> None:
 
 def main() -> int:
     changes: List[Tuple[str, Version]] = []
+    dispatch_target = get_dispatch_target()
 
-    for addon in ADDONS:
-        if not addon.get("auto_sync", True):
-            continue
-        changed, addon_name, latest = update_addon(addon)
+    if dispatch_target:
+        addon = find_addon_by_repo(dispatch_target["repo"])
+        upstream = fetch_tagged_upstream(
+            repo=dispatch_target["repo"],
+            tag_name=dispatch_target["tag"],
+            commit_sha=dispatch_target["sha"] or None,
+            commit_message=dispatch_target["commit_message"] or None,
+        )
+        changed, addon_name, latest = update_addon(addon, upstream=upstream)
         if changed:
             changes.append((addon_name, latest))
+    else:
+        for addon in ADDONS:
+            if not addon.get("auto_sync", True):
+                continue
+            changed, addon_name, latest = update_addon(addon)
+            if changed:
+                changes.append((addon_name, latest))
 
     if not changes:
         print("Sin cambios de versión")

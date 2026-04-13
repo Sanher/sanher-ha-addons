@@ -4,6 +4,13 @@ on:
   schedule:
     - cron: "13 */6 * * *"
   workflow_dispatch:
+  repository_dispatch:
+    types:
+      - child-tag-published
+
+concurrency:
+  group: sync-linked-addon-versions
+  cancel-in-progress: false
 
 permissions:
   contents: write
@@ -25,6 +32,11 @@ jobs:
 
       - name: Sync versions from linked repositories
         id: sync
+        env:
+          SYNC_TARGET_REPO: ${{ github.event.client_payload.repo }}
+          SYNC_TARGET_TAG: ${{ github.event.client_payload.tag }}
+          SYNC_TARGET_SHA: ${{ github.event.client_payload.sha }}
+          SYNC_TARGET_COMMIT_MESSAGE: ${{ github.event.client_payload.commit_message }}
         run: .github/scripts/sync_linked_versions.py
 
       - name: Commit and push changes
