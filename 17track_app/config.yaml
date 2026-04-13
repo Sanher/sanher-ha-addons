@@ -2,7 +2,7 @@ name: "17Track App"
 slug: "17track_app"
 description: "Servidor 17Track (Node) para paquetes + background refresher + worker IMAP"
 url: "https://github.com/Sanher/sanher-ha-addons/tree/main/17track_app"
-version: "2.6.15"
+version: "2.6.16"
 arch:
   - amd64
   - aarch64
@@ -10,6 +10,7 @@ arch:
 startup: services
 boot: auto
 init: false
+homeassistant_api: true
 ingress: true
 ingress_port: 8787
 panel_title: Paquetes IMAP
@@ -30,7 +31,7 @@ options:
   bg_normal_interval_min: 45
   bg_slow_hours: "8,20"
 
-  ha_url: "http://supervisor/core"
+  ha_url: "http://supervisor/core/api"
   ha_token: ""
   ha_script: "jarvis_17track_notify"
   ha_user_owners_file: "/config/ha_user_owners.json"
