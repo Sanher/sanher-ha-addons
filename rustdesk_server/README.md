@@ -16,9 +16,9 @@ Main public hostname or IP used by RustDesk clients.
 
 Example:
 
-- `rustdesk.example.duckdns.org`
+- `rustdesk.example.com`
 
-DuckDNS is a valid option for `public_host`.
+A dynamic DNS hostname is also valid for `public_host`.
 
 ### relay_host
 
