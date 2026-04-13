@@ -1,7 +1,7 @@
 name: "OmniTools"
 slug: "omnitools"
 description: "OmniTools como app de Home Assistant con acceso principal por ingress."
-version: "0.6.1"
+version: "0.6.2"
 url: "https://github.com/Sanher/sanher-ha-addons/tree/main/omnitools"
 arch:
   - amd64

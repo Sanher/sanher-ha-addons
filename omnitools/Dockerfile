@@ -1,19 +1,26 @@
-ARG APP_REF=v0.6.0
-ARG APP_REPO=https://github.com/iib0011/omni-tools.git
+ARG APP_REF=v0.6.2
+ARG APP_REPO=https://github.com/Sanher/Omnitools.git
+
+FROM alpine/git:2.47.2 AS wrapper_source
+ARG APP_REPO
+ARG APP_REF
+RUN git clone --depth 1 --branch "${APP_REF}" "${APP_REPO}" /wrapper
 
 FROM node:20-alpine AS build
-ARG APP_REF
-ARG APP_REPO
 
 WORKDIR /src
 
 RUN apk add --no-cache ca-certificates git patch
 
-RUN git clone --depth 1 --branch "${APP_REF}" "${APP_REPO}" /src
+COPY --from=wrapper_source /wrapper/wrapper-source.yaml /tmp/omnitools-wrapper-source.yaml
+COPY --from=wrapper_source /wrapper/patches /tmp/omnitools-patches
 
-COPY patches/omnitools-ingress-v0.6.0.patch /tmp/omnitools-ingress.patch
-
-RUN patch -p1 < /tmp/omnitools-ingress.patch
+RUN UPSTREAM_REPO="$(sed -n 's/^upstream_repo: //p' /tmp/omnitools-wrapper-source.yaml)" \
+    && UPSTREAM_REF="$(sed -n 's/^upstream_ref: //p' /tmp/omnitools-wrapper-source.yaml)" \
+    && test -n "${UPSTREAM_REPO}" \
+    && test -n "${UPSTREAM_REF}" \
+    && git clone --depth 1 --branch "${UPSTREAM_REF}" "${UPSTREAM_REPO}" /src \
+    && patch -p1 -d /src < /tmp/omnitools-patches/omnitools-ingress-v0.6.0.patch
 
 RUN npm ci
 RUN npm run build
@@ -27,8 +34,8 @@ RUN apk add --no-cache nginx \
     && mkdir -p /run/nginx /etc/nginx/http.d /usr/share/nginx/html \
     && sed -i 's/application\/javascript.*js;/application\/javascript                js mjs;/' /etc/nginx/mime.types
 
-COPY nginx.conf /etc/nginx/http.d/default.conf
-COPY run.sh /run.sh
+COPY --from=wrapper_source /wrapper/nginx.conf /etc/nginx/http.d/default.conf
+COPY --from=wrapper_source /wrapper/run.sh /run.sh
 COPY --from=build /src/dist/ /usr/share/nginx/html/
 
 RUN chmod a+x /run.sh

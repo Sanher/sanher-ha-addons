@@ -50,7 +50,6 @@ ADDONS = [
         "config": Path("omnitools/config.yaml"),
         "dockerfile": Path("omnitools/Dockerfile"),
         "changelog": Path("omnitools/CHANGELOG.md"),
-        "sync_docker_ref": False,
     },
 ]
 
