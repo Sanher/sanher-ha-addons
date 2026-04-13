@@ -2,7 +2,7 @@ name: Learn Languages
 slug: learn_languages
 description: "Minijuegos de japonés con UI web integrada."
 url: "https://github.com/Sanher/sanher-ha-addons/tree/main/learn-languages"
-version: "1.3.1"
+version: "1.3.2"
 arch:
   - amd64
   - aarch64
@@ -16,12 +16,10 @@ panel_icon: mdi:translate
 panel_title: Learn Languages
 ingress: true
 ingress_port: 8107
+watchdog: http://[HOST]:[PORT:8107]/health
 webui: http://[HOST]:[PORT:8107]/web/
 map:
   - share:rw
-
-ports:
-  8107/tcp: 8107
 
 options:
   openai_api_key: ""

@@ -1,4 +1,4 @@
-ARG BUILD_FROM=python:3.12-slim
+ARG BUILD_FROM
 FROM ${BUILD_FROM}
 
 ENV PYTHONDONTWRITEBYTECODE=1 \
@@ -9,7 +9,7 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
 
 WORKDIR /app
 
-ARG APP_REF=v1.3.1
+ARG APP_REF=v1.3.2
 ARG APP_REPO=https://github.com/Sanher/learn-languages.git
 
 RUN apk add --no-cache git python3 py3-pip \
