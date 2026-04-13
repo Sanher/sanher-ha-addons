@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.0.9
+
+- Sync upstream `Sanher/Rustdesk_wrapper` (0.0.9): docs(ui): aclara compatibilidad con apps de ha.
+
 ## 0.0.8
 
 - Sync upstream `Sanher/Rustdesk_wrapper` (0.0.8): docs(ui): documenta conectividad del wrapper.

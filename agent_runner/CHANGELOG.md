@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.15.0
+
+- Sync upstream `Sanher/Agent_runner` (v3.15.0): feat(ui): rediseña shell global y paneles de agentes.
+
 ## 3.14.6
 
 - Sync upstream `Sanher/Agent_runner` (v3.14.6): fix(api): corrige parseo y parent en issue agent.
