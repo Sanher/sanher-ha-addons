@@ -20,4 +20,6 @@ En Home Assistant:
 
 - `Happy Server`: despliegue autoalojado de Happy Server con PostgreSQL y Redis internos en el mismo contenedor.
 
+- `OmniTools`: utilidades web servidas por ingress, endurecidas para el proxy del Supervisor.
+
 - `RustDesk Server`: servidor RustDesk OSS minimalista para Home Assistant, sin ingress y con persistencia en /data.
