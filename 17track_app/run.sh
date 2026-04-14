@@ -46,6 +46,54 @@ export IMAP_GMAIL_3_APP_PASSWORD="$(bashio::config 'imap_gmail_3_app_password')"
 export IMAP_GMAIL_4_APP_PASSWORD="$(bashio::config 'imap_gmail_4_app_password')"
 export IMAP_GMAIL_FILTER_APP_PASSWORD="$(bashio::config 'imap_gmail_filter_app_password')"
 
+unsupported_imap_accounts() {
+  local accounts_file="${IMAP_ACCOUNTS_FILE:-}"
+
+  [ -n "${accounts_file}" ] || return 0
+  [ -f "${accounts_file}" ] || return 0
+
+  python3 - "${accounts_file}" <<'PY'
+import json
+import sys
+from pathlib import Path
+
+path = Path(sys.argv[1])
+
+try:
+    data = json.loads(path.read_text())
+except Exception:
+    sys.exit(0)
+
+if not isinstance(data, list):
+    sys.exit(0)
+
+unsupported = []
+for entry in data:
+    if not isinstance(entry, dict):
+        continue
+    email_addr = str(entry.get("email") or "").strip().lower()
+    provider = str(entry.get("provider") or "").strip().lower()
+    if provider == "outlook" or "hotmail." in email_addr or "outlook." in email_addr or "live." in email_addr:
+        unsupported.append(email_addr or "<missing-email>")
+
+if unsupported:
+    print("\n".join(dict.fromkeys(unsupported)))
+PY
+}
+
+warn_unsupported_imap_accounts() {
+  local unsupported_accounts
+
+  unsupported_accounts="$(unsupported_imap_accounts)"
+  [ -z "${unsupported_accounts}" ] && return 0
+
+  bashio::log.warning "Unsupported Outlook/Hotmail IMAP accounts detected in ${IMAP_ACCOUNTS_FILE}. Remove these entries or redirect mail to Gmail before the worker runs."
+  while IFS= read -r account; do
+    [ -n "${account}" ] || continue
+    bashio::log.warning "Unsupported IMAP account entry: ${account}"
+  done <<< "${unsupported_accounts}"
+}
+
 backend_supports_imap() {
   [ -f /app/src/index.js ] || return 1
   grep -q '/api/owner/:owner/imap/ingest' /app/src/index.js
@@ -75,6 +123,7 @@ start_imap_worker_loop() {
   ) &
 }
 
+warn_unsupported_imap_accounts
 start_imap_worker_loop
 
 exec node src/index.js

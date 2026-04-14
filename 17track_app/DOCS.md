@@ -106,7 +106,8 @@ Nota: si `APP_REF` aun apunta a una version sin endpoints `/imap`, el add-on no 
 
 2. Si quieres seguir usando Outlook/Hotmail:
 - configura una redireccion automatica hacia una cuenta Gmail leida por IMAP desde este add-on.
-- si te queda una cuenta Outlook antigua en `/config/imap_accounts.json`, borra esa entrada o dejala con `enabled=false`.
+- From `v2.6.18`, the backend explicitly rejects any Outlook/Hotmail account still present in `/config/imap_accounts.json`.
+- Remove that entry from the file before restarting the add-on.
 
 3. Si necesitas endurecer filtros:
 - usa `allowed_sender_domains` y `require_dkim_pass`/`require_spf_pass`.
