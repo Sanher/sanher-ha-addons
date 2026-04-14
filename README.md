@@ -16,6 +16,8 @@ En Home Assistant:
 
 - `Agent Runner`: runner de automatizaciones IA/web con API y persistencia en /data.
 
+- `Discount Bandit`: self-hosted price tracker with persistent SQLite, automatic APP_KEY storage, and access through a published port.
+
 - `Learn Languages`: AI-assisted Japanese learning add-on with daily lessons, adaptive practice games, progress tracking, and a web UI through Home Assistant ingress.
 
 - `Happy Server`: despliegue autoalojado de Happy Server con PostgreSQL y Redis internos en el mismo contenedor.

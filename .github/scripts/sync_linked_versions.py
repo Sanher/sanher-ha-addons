@@ -45,6 +45,13 @@ ADDONS = [
         "changelog": Path("happy_server/CHANGELOG.md"),
     },
     {
+        "name": "discount_bandit",
+        "repo": "Sanher/Discount_Bandit",
+        "config": Path("discount_bandit/config.yaml"),
+        "dockerfile": Path("discount_bandit/Dockerfile"),
+        "changelog": Path("discount_bandit/CHANGELOG.md"),
+    },
+    {
         "name": "omnitools",
         "repo": "Sanher/Omnitools",
         "config": Path("omnitools/config.yaml"),
