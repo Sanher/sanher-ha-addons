@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.6.6
+
+- Sync upstream `Sanher/learn-languages` (v1.6.6): feat(api): amplía el fallback de topics.
+
 ## 1.3.3
 
 - Sync upstream `Sanher/learn-languages` (v1.3.3): chore(ci): añade sync al repo padre y excluye claude.
