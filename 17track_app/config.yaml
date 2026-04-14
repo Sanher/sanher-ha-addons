@@ -2,7 +2,7 @@ name: "17Track App"
 slug: "17track_app"
 description: "Servidor 17Track (Node) para paquetes + background refresher + worker IMAP"
 url: "https://github.com/Sanher/sanher-ha-addons/tree/main/17track_app"
-version: "2.6.17"
+version: "2.6.18"
 arch:
   - amd64
   - aarch64
