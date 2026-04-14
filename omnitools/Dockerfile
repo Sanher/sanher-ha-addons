@@ -1,4 +1,4 @@
-ARG BUILD_FROM=ghcr.io/home-assistant/base:3.21
+ARG BUILD_FROM=docker.io/library/alpine:3.21
 ARG APP_REF=v0.6.3
 ARG APP_REPO=https://github.com/Sanher/Omnitools.git
 
@@ -47,4 +47,4 @@ ENV APP_REPO="${APP_REPO}" \
 
 EXPOSE 8099
 
-CMD ["/run.sh"]
+ENTRYPOINT ["/bin/sh", "/run.sh"]
