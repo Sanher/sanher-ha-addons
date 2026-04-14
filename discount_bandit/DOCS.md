@@ -6,19 +6,28 @@
 
 Key traits:
 
-- published HTTP port instead of ingress-first design
+- ingress-first design through the Home Assistant supervisor proxy
 - persistent SQLite in `/data/discount_bandit`
 - automatic persistent `APP_KEY` generation in `/data`
 - log forwarding from the upstream stack into the add-on logs
+- dynamic Laravel/Filament base URL patch for ingress requests
 
-## Port
+## Ingress
 
-- container port: `80/tcp`
-- default published Home Assistant port: `8099`
+- ingress enabled: `true`
+- ingress port: `8099`
 
-The add-on web UI is exposed as:
+The add-on web UI is exposed through Home Assistant ingress.
 
-- `http://[HOST]:[PORT:80]`
+The wrapper also runs an internal nginx proxy on `8099` to forward:
+
+- `Host`
+- `X-Forwarded-Host`
+- `X-Forwarded-Proto`
+- `X-Forwarded-For`
+- `X-Ingress-Path`
+
+to the upstream Laravel runtime on `127.0.0.1:80`.
 
 ## Persistent data
 
@@ -37,12 +46,13 @@ Final public URL used by the application.
 
 Examples:
 
-- local access:
-  - `http://homeassistant.local:8099`
-- direct LAN access:
-  - `http://192.168.1.10:8099`
+- ingress-only access:
+  - leave it empty
+- external reverse proxy:
+  - `https://discount-bandit.example.com`
 
-Use the real final URL without a trailing slash.
+For ingress-only usage, the wrapper patch recalculates the base URL dynamically per request from forwarded headers.
+If you also expose the service externally, set the real final URL without a trailing slash.
 
 ### `theme_color`
 
@@ -69,3 +79,4 @@ Optional API key for exchange-rate functionality in the upstream application.
 - The add-on forces SQLite and links the writable upstream paths into `/data`.
 - If `APP_KEY` does not exist yet, it is generated automatically on first startup and stored persistently.
 - Upstream file-based logs are mirrored into the add-on log output for easier diagnosis from Home Assistant.
+- The ingress patch updates `app.url`, `app.asset_url`, and the public/storage filesystem URLs for each request.

@@ -1,6 +1,6 @@
 name: "Discount Bandit"
 slug: "discount_bandit"
-description: "Self-hosted Discount Bandit with persistent SQLite and APP_KEY in /data."
+description: "Self-hosted Discount Bandit with ingress-first access, persistent SQLite, and APP_KEY in /data."
 version: "0.1.0"
 url: "https://github.com/Sanher/sanher-ha-addons/tree/main/discount_bandit"
 arch:
@@ -9,26 +9,21 @@ arch:
 startup: services
 boot: auto
 init: false
-ingress: false
-webui: "http://[HOST]:[PORT:80]"
+ingress: true
+ingress_port: 8099
+watchdog: "http://[HOST]:[PORT:8099]/health"
 
 map:
   - data:rw
 
-ports:
-  80/tcp: 8099
-
-ports_description:
-  80/tcp: "Discount Bandit web UI"
-
 options:
-  public_base_url: "http://homeassistant.local:8099"
+  public_base_url: ""
   theme_color: "Red"
   cron: "*/5 * * * *"
   exchange_rate_api_key: ""
 
 schema:
-  public_base_url: str
+  public_base_url: str?
   theme_color: str
   cron: str
   exchange_rate_api_key: password?

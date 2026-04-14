@@ -16,7 +16,7 @@ En Home Assistant:
 
 - `Agent Runner`: runner de automatizaciones IA/web con API y persistencia en /data.
 
-- `Discount Bandit`: self-hosted price tracker with persistent SQLite, automatic APP_KEY storage, and access through a published port.
+- `Discount Bandit`: self-hosted price tracker with persistent SQLite, automatic APP_KEY storage, and ingress-first access.
 
 - `Learn Languages`: AI-assisted Japanese learning add-on with daily lessons, adaptive practice games, progress tracking, and a web UI through Home Assistant ingress.
 

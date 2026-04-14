@@ -3,6 +3,8 @@
 ## 0.1.0
 
 - Sync upstream `Sanher/Discount_Bandit` (0.1.0): feat(workday): añade soporte ingress para wrapper.
+- Switches the add-on to the wrapper ingress integration with nginx proxying on `8099`.
+- Applies the Laravel ingress patch and keeps the integration ingress-first by default.
 
 ## 0.0.3
 
