@@ -1,7 +1,7 @@
 name: "Discount Bandit"
 slug: "discount_bandit"
 description: "Self-hosted Discount Bandit with persistent SQLite and APP_KEY in /data."
-version: "0.0.3"
+version: "0.1.0"
 url: "https://github.com/Sanher/sanher-ha-addons/tree/main/discount_bandit"
 arch:
   - amd64
