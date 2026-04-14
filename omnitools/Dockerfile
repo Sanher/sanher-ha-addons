@@ -1,3 +1,4 @@
+ARG BUILD_FROM=ghcr.io/home-assistant/base:3.21
 ARG APP_REF=v0.6.3
 ARG APP_REPO=https://github.com/Sanher/Omnitools.git
 
@@ -25,8 +26,8 @@ RUN UPSTREAM_REPO="$(sed -n 's/^upstream_repo: //p' /tmp/omnitools-wrapper-sourc
 RUN npm ci
 RUN npm run build
 
-ARG BUILD_FROM=ghcr.io/home-assistant/base:3.21
 FROM ${BUILD_FROM}
+ARG BUILD_FROM
 ARG APP_REF
 ARG APP_REPO
 
