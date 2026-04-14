@@ -11,6 +11,9 @@ boot: auto
 init: false
 ingress: true
 ingress_port: 8099
+ingress_panel: true
+panel_title: "Discount Bandit"
+panel_icon: "mdi:cart"
 watchdog: "http://[HOST]:[PORT:8099]/health"
 
 map:
