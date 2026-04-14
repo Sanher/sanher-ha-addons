@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.15.1
+
+- Sync upstream `Sanher/Agent_runner` (v3.15.1): chore(api): añade notificación al repo padre.
+
 ## 3.15.0
 
 - Sync upstream `Sanher/Agent_runner` (v3.15.0): feat(ui): rediseña shell global y paneles de agentes.
