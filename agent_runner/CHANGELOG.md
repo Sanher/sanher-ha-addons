@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.15.4
+
+- Sync upstream `Sanher/Agent_runner` (v3.15.4): docs(api): documenta persistencia de answers.
+
 ## 3.15.3
 
 - Sync upstream `Sanher/Agent_runner` (v3.15.3): fix(workday): mejora bloqueos y panel de workday.
