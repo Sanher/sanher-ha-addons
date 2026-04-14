@@ -2,6 +2,8 @@
 
 `happy_server` runs a self-hosted Happy Server instance inside Home Assistant, with PostgreSQL and Redis bundled inside the add-on.
 
+This add-on provides the Happy Server backend service. It is not currently exposed as a Home Assistant ingress UI. Access should be configured through `public_url` and, when needed, an external reverse proxy.
+
 ## Internal architecture
 
 The add-on starts three components inside the same container:

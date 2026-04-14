@@ -10,7 +10,6 @@ arch:
 startup: services
 boot: auto
 host_network: false
-webui: http://[HOST]:[PORT:3005]
 watchdog: http://[HOST]:[PORT:3005]/health
 
 map:
