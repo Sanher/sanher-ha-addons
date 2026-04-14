@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.3.3
+
+- Sync upstream `Sanher/learn-languages` (v1.3.3): chore(ci): añade sync al repo padre y excluye claude.
+
 ## 1.3.1
 
 - Sync upstream `Sanher/learn-languages` (v1.3.1): fix(ui): ajusta revision y nomenclatura del examen de rango.

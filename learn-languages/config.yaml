@@ -2,7 +2,7 @@ name: Learn Languages
 slug: learn_languages
 description: "Minijuegos de japonés con UI web integrada."
 url: "https://github.com/Sanher/sanher-ha-addons/tree/main/learn-languages"
-version: "1.3.2"
+version: "1.3.3"
 arch:
   - amd64
   - aarch64
