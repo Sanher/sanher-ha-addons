@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.2
+
+- Sync upstream `Sanher/Discount_Bandit` (0.1.2): fix(ingress): corrige rutas livewire en ingress.
+
 ## 0.1.1
 
 - Sync upstream `Sanher/Discount_Bandit` (0.1.1): fix(workday): mejora deteccion nginx en ingress.
