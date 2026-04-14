@@ -1,4 +1,4 @@
-ARG APP_REF=v0.6.2
+ARG APP_REF=v0.6.3
 ARG APP_REPO=https://github.com/Sanher/Omnitools.git
 
 FROM alpine/git:2.47.2 AS wrapper_source
