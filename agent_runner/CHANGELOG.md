@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.15.3
+
+- Sync upstream `Sanher/Agent_runner` (v3.15.3): fix(workday): mejora bloqueos y panel de workday.
+
 ## 3.15.2
 
 - Sync upstream `Sanher/Agent_runner` (v3.15.2): fix(api): mejora reintentos del issue agent.
