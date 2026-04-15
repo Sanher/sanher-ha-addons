@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.10
+
+- Sync upstream `Sanher/Discount_Bandit` (0.1.10): fix(ingress): fuerza redirect estable tras login.
+
 ## 0.1.9
 
 - Sync upstream `Sanher/Discount_Bandit` (0.1.9): fix(ingress): corrige destino tras login.
