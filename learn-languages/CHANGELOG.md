@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.6.7
+
+- Sync upstream `Sanher/learn-languages` (v1.6.7): fix(ui): ajusta chips y traducciones secundarias.
+
 ## 1.6.6
 
 - Sync upstream `Sanher/learn-languages` (v1.6.6): feat(api): amplía el fallback de topics.
