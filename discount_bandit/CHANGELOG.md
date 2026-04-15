@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.15
+
+- Sync upstream `Sanher/Discount_Bandit` (0.1.15): fix(ingress): ajusta cookie de sesion en iframe.
+
 ## 0.1.14
 
 - Sync upstream `Sanher/Discount_Bandit` (0.1.14): fix(ingress): preserva sesion en livewire update.
