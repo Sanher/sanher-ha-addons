@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.7
+
+- Sync upstream `Sanher/Discount_Bandit` (0.1.7): fix(ingress): corrige asset url de livewire.
+
 ## 0.1.6
 
 - Sync upstream `Sanher/Discount_Bandit` (0.1.6): fix(ingress): corrige rutas absolutas residuales.
