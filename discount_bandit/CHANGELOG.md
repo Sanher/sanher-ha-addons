@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.4
+
+- Sync upstream `Sanher/Discount_Bandit` (0.1.4): fix(ingress): añade logs para diagnostico auth.
+
 ## 0.1.3
 
 - Sync upstream `Sanher/Discount_Bandit` (0.1.3): fix(ingress): corrige redirects auth bajo ingress.
