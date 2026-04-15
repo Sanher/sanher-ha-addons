@@ -1,5 +1,5 @@
 ARG APP_REPO=https://github.com/Sanher/Discount_bandit.git
-ARG APP_REF=0.1.12
+ARG APP_REF=0.1.13
 
 FROM alpine/git:2.47.2 AS wrapper_source
 ARG APP_REPO

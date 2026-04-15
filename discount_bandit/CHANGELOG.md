@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.13
+
+- Sync upstream `Sanher/Discount_Bandit` (0.1.13): fix(ingress): ajusta respuesta de login para livewire.
+
 ## 0.1.12
 
 - Sync upstream `Sanher/Discount_Bandit` (0.1.12): fix(ingress): mueve redirect post-login a respuesta auth.
