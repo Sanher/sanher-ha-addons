@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.9
+
+- Sync upstream `Sanher/Discount_Bandit` (0.1.9): fix(ingress): corrige destino tras login.
+
 ## 0.1.8
 
 - Sync upstream `Sanher/Discount_Bandit` (0.1.8): fix(ingress): corrige redirect tras registro.
