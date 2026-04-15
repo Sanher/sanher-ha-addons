@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.5
+
+- Sync upstream `Sanher/Discount_Bandit` (0.1.5): fix(ingress): corrige assets livewire bajo ingress.
+
 ## 0.1.4
 
 - Sync upstream `Sanher/Discount_Bandit` (0.1.4): fix(ingress): añade logs para diagnostico auth.
