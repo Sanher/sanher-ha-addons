@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.3
+
+- Sync upstream `Sanher/Discount_Bandit` (0.1.3): fix(ingress): corrige redirects auth bajo ingress.
+
 ## 0.1.2
 
 - Sync upstream `Sanher/Discount_Bandit` (0.1.2): fix(ingress): corrige rutas livewire en ingress.
