@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.14
+
+- Sync upstream `Sanher/Discount_Bandit` (0.1.14): fix(ingress): preserva sesion en livewire update.
+
 ## 0.1.13
 
 - Sync upstream `Sanher/Discount_Bandit` (0.1.13): fix(ingress): ajusta respuesta de login para livewire.
