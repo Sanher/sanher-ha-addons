@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.11
+
+- Sync upstream `Sanher/Discount_Bandit` (0.1.11): fix(ingress): corrige contrato de login de filament.
+
 ## 0.1.10
 
 - Sync upstream `Sanher/Discount_Bandit` (0.1.10): fix(ingress): fuerza redirect estable tras login.
