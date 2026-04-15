@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.6.9
+
+- Sync upstream `Sanher/learn-languages` (v1.6.9): fix(ui): ajusta la alineación visual de tags.
+
 ## 1.6.8
 
 - Sync upstream `Sanher/learn-languages` (v1.6.8): fix(ui): ajusta la alineación visual de tags.
