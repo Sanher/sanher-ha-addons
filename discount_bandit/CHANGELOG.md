@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.8
+
+- Sync upstream `Sanher/Discount_Bandit` (0.1.8): fix(ingress): corrige redirect tras registro.
+
 ## 0.1.7
 
 - Sync upstream `Sanher/Discount_Bandit` (0.1.7): fix(ingress): corrige asset url de livewire.
