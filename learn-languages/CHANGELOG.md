@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.6.10
+
+- Sync upstream `Sanher/learn-languages` (v1.6.10): fix(ui): recupera hover y traducciones de focus items.
+
 ## 1.6.9
 
 - Sync upstream `Sanher/learn-languages` (v1.6.9): fix(ui): ajusta la alineación visual de tags.
