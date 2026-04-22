@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.3
+
+- Sync upstream `Sanher/RSS_bridge` (v0.1.3): chore(version): bump to version 0.1.3.
+
 ## 0.1.2
 
 - Prioritize `/app/docker-entrypoint.sh` when resolving the upstream RSS-Bridge
