@@ -1,7 +1,7 @@
 name: "RSS Bridge"
 slug: "rss_bridge"
 description: "RSS-Bridge for Home Assistant with ingress-first access, persistent cache, and optional token authentication."
-version: "0.1.1"
+version: "0.1.2"
 url: "https://github.com/Sanher/sanher-ha-addons/tree/main/rss_bridge"
 arch:
   - amd64

@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.2
+
+- Prioritize `/app/docker-entrypoint.sh` when resolving the upstream RSS-Bridge
+  entrypoint.
+- Keep the existing fallback order through `PATH` and `/docker-entrypoint.sh`.
+
 ## 0.1.1
 
 - Escape `auth_token` before writing the managed `config.ini.php`.

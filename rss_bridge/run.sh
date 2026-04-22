@@ -167,6 +167,11 @@ EOF
 }
 
 resolve_entrypoint() {
+  if [ -x /app/docker-entrypoint.sh ]; then
+    printf '/app/docker-entrypoint.sh'
+    return
+  fi
+
   if command -v docker-entrypoint.sh >/dev/null 2>&1; then
     command -v docker-entrypoint.sh
     return
