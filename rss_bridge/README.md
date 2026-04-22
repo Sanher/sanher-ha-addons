@@ -11,6 +11,8 @@ RSS Bridge packaged for Home Assistant with ingress as the primary access path.
 - Keeps a generated `config.ini.php` with safe defaults for a Home Assistant
   deployment.
 - Enables token authentication only when `auth_token` is configured.
+- Exposes the same service directly on local port `8099` for machine-to-machine
+  consumers such as `Feedreader`.
 
 ## Why this wrapper pattern
 
@@ -31,13 +33,27 @@ The parent repository remains the only published source of truth for:
 ## Runtime behavior
 
 - Internal service port: `8099`
-- Main access path: Home Assistant ingress
+- Main access path for humans: Home Assistant ingress
+- Direct local access for integrations: `http://HOME_ASSISTANT_HOST:8099/`
 - Persistent paths:
   - `/data/rss-bridge/config`
   - `/data/rss-bridge/cache`
 - Logs:
   - wrapper startup and config generation logs on stdout
   - upstream Apache and RSS-Bridge logs from the base image
+
+## Access modes
+
+- Use Home Assistant ingress for interactive browsing and bridge discovery.
+- Use the direct local HTTP endpoint for integrations that cannot rely on an
+  authenticated Home Assistant browser session.
+
+For a Home Assistant host at `192.168.178.35`, a direct local feed URL looks
+like this:
+
+`http://192.168.178.35:8099/?action=display&bridge=RedditBridge&context=single&r=FreeGameFindings&d=new&format=Atom`
+
+This direct URL is the one to paste into integrations such as `Feedreader`.
 
 ## Authentication behavior
 
@@ -47,6 +63,15 @@ The parent repository remains the only published source of truth for:
   generated `config.ini.php`.
 - The add-on should not be considered token-protected when `auth_token` is not
   set.
+- For the simplest `Feedreader` setup, keep `auth_token` empty and use the
+  direct local URL on your Home Assistant LAN host.
+
+## Security note
+
+- Ingress remains the preferred human-facing entrypoint.
+- The direct local port is intended for trusted local-network integrations.
+- If you expose Home Assistant beyond your LAN, keep this add-on reachable only
+  from networks you trust.
 
 ## Upstream pinning
 
