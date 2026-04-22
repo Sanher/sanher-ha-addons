@@ -1,0 +1,29 @@
+name: "RSS Bridge"
+slug: "rss_bridge"
+description: "RSS-Bridge for Home Assistant with ingress-first access, persistent cache, and optional token authentication."
+version: "0.1.1"
+url: "https://github.com/Sanher/sanher-ha-addons/tree/main/rss_bridge"
+arch:
+  - amd64
+  - aarch64
+  - armv7
+startup: services
+boot: auto
+ingress: true
+ingress_port: 8099
+panel_title: "RSS Bridge"
+panel_icon: "mdi:rss-box"
+watchdog: "http://[HOST]:[PORT:8099]/"
+
+map:
+  - data:rw
+
+options:
+  auth_token: ""
+  debug: false
+  timezone: "UTC"
+
+schema:
+  auth_token: password?
+  debug: bool
+  timezone: str

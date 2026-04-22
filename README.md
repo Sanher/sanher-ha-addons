@@ -24,4 +24,6 @@ En Home Assistant:
 
 - `OmniTools`: utilidades web servidas por ingress, endurecidas para el proxy del Supervisor.
 
+- `RSS Bridge`: ingress-first RSS-Bridge add-on with persistent config and cache under `/data/rss-bridge`.
+
 - `RustDesk Server`: servidor RustDesk OSS minimalista para Home Assistant, sin ingress y con persistencia en /data.

@@ -58,6 +58,13 @@ ADDONS = [
         "dockerfile": Path("omnitools/Dockerfile"),
         "changelog": Path("omnitools/CHANGELOG.md"),
     },
+    {
+        "name": "rss_bridge",
+        "repo": "Sanher/RSS_bridge",
+        "config": Path("rss_bridge/config.yaml"),
+        "changelog": Path("rss_bridge/CHANGELOG.md"),
+        "sync_docker_ref": False,
+    },
 ]
 
 TAG_RE = re.compile(r"^v?(\d+)\.(\d+)(?:\.(\d+))?$")
