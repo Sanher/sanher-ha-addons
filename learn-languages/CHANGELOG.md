@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.6.11
+
+- Sync upstream `Sanher/learn-languages` (v1.6.11): fix(ui): corrige el gloss de las tags.
+
 ## 1.6.10
 
 - Sync upstream `Sanher/learn-languages` (v1.6.10): fix(ui): recupera hover y traducciones de focus items.
