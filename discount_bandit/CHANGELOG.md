@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.22
+
+- Sync upstream `Sanher/Discount_Bandit` (0.1.22): fix(ingress): honor crawler cron schedule.
+
 ## 0.1.21
 
 - Sync upstream `Sanher/Discount_Bandit` (0.1.21): fix(ingress): align patch with docker image source.
