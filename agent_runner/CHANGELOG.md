@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.15.6
+
+- Sync upstream `Sanher/Agent_runner` (v3.15.6): feat(answers): muestra historial de telegram como chat.
+
 ## 3.15.5
 
 - Sync upstream `Sanher/Agent_runner` (v3.15.5): fix(api): mejora reconciliación del submit de issues.
