@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.23
+
+- Sync upstream `Sanher/Discount_Bandit` (0.1.23): fix(ingress): rewrite livewire dashboard links.
+
 ## 0.1.22
 
 - Sync upstream `Sanher/Discount_Bandit` (0.1.22): fix(ingress): honor crawler cron schedule.
