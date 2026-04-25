@@ -1,6 +1,6 @@
 ARG BUILD_FROM=docker.io/library/node:20-bookworm
 ARG APP_REPO=https://github.com/Sanher/Happy_server.git
-ARG APP_REF=0.1.8
+ARG APP_REF=0.1.9
 
 FROM alpine/git:2.47.2 AS wrapper_source
 ARG APP_REPO

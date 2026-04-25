@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.9
+
+- Sync upstream `Sanher/Happy_server` (0.1.9): chore(version): bump to version 0.1.9.
+
 ## 0.1.8
 
 - Sync upstream `Sanher/Happy_server` (0.1.8): docs(api): documenta contrato del wrapper source.
