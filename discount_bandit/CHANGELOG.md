@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.20
+
+- Sync upstream `Sanher/Discount_Bandit` (0.1.20): fix(ingress): fix healthcheck and storage seeding.
+
 ## 0.1.19
 
 - Sync upstream `Sanher/Discount_Bandit` (0.1.19): fix(ingress): corrige contexto del patch.
