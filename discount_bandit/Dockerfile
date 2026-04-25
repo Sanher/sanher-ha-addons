@@ -34,4 +34,7 @@ ENV APP_REPO="${APP_REPO}" \
 
 EXPOSE 8099
 
+HEALTHCHECK --interval=30s --timeout=5s --start-period=60s --retries=3 \
+    CMD php -r 'exit(trim(@file_get_contents("http://127.0.0.1:8099/health")) === "ok" ? 0 : 1);'
+
 ENTRYPOINT ["/bin/sh", "/run.sh"]

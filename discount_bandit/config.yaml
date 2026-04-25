@@ -23,10 +23,12 @@ options:
   public_base_url: ""
   theme_color: "Red"
   cron: "*/5 * * * *"
+  max_links_per_store: 10
   exchange_rate_api_key: ""
 
 schema:
   public_base_url: str?
   theme_color: str
   cron: str
+  max_links_per_store: int
   exchange_rate_api_key: password?
