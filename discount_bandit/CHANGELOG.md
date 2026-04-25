@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.24
+
+- Sync upstream `Sanher/Discount_Bandit` (0.1.24): fix(ingress): rewrite dashboard base url.
+
 ## 0.1.23
 
 - Sync upstream `Sanher/Discount_Bandit` (0.1.23): fix(ingress): rewrite livewire dashboard links.
