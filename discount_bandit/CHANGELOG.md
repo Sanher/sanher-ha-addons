@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.18
+
+- Sync upstream `Sanher/Discount_Bandit` (0.1.18): fix(ingress): limita chromium y workers.
+
 ## 0.1.17
 
 - Sync upstream `Sanher/Discount_Bandit` (0.1.17): fix(ingress): redirige home a products.
