@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.11
+
+- Remove the legacy `build.yaml` because it forced Docker Hub base images and overrode the ECR `BUILD_FROM` configured in the Dockerfile.
+
 ## 0.1.10
 
 - Use Amazon ECR Public mirrors for Docker Official base images to avoid Docker Hub/Cloudflare metadata resolution timeouts during Home Assistant builds.

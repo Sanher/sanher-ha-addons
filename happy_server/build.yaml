@@ -1,8 +1,0 @@
-build_from:
-  amd64: docker.io/library/node:20-bookworm
-  aarch64: docker.io/library/node:20-bookworm
-  armv7: docker.io/library/node:20-bookworm
-labels:
-  org.opencontainers.image.title: "Happy Server"
-  org.opencontainers.image.description: "Home Assistant add-on for Happy Server with internal PostgreSQL and Redis"
-  org.opencontainers.image.source: "https://github.com/Sanher/sanher-ha-addons"
