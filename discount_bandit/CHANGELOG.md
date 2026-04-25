@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.19
+
+- Sync upstream `Sanher/Discount_Bandit` (0.1.19): fix(ingress): corrige contexto del patch.
+
 ## 0.1.18
 
 - Sync upstream `Sanher/Discount_Bandit` (0.1.18): fix(ingress): limita chromium y workers.
