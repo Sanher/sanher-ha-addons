@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.21
+
+- Sync upstream `Sanher/Discount_Bandit` (0.1.21): fix(ingress): align patch with docker image source.
+
 ## 0.1.20
 
 - Sync upstream `Sanher/Discount_Bandit` (0.1.20): fix(ingress): fix healthcheck and storage seeding.
