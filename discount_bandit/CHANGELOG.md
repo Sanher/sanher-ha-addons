@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.25
+
+- Sync upstream `Sanher/Discount_Bandit` (0.1.25): fix(ingress): add dashboard route path.
+
 ## 0.1.24
 
 - Sync upstream `Sanher/Discount_Bandit` (0.1.24): fix(ingress): rewrite dashboard base url.
