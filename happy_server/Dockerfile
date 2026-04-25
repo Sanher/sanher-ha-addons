@@ -1,10 +1,11 @@
-ARG BUILD_FROM=docker.io/library/node:20-bookworm
+ARG BUILD_FROM=public.ecr.aws/docker/library/node:20-bookworm
 ARG APP_REPO=https://github.com/Sanher/Happy_server.git
 ARG APP_REF=0.1.9
 
-FROM alpine/git:2.47.2 AS wrapper_source
+FROM public.ecr.aws/docker/library/alpine:3.21 AS wrapper_source
 ARG APP_REPO
 ARG APP_REF
+RUN apk add --no-cache git
 RUN git clone --depth 1 --branch ${APP_REF} ${APP_REPO} /wrapper
 
 FROM $BUILD_FROM

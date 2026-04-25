@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.10
+
+- Use Amazon ECR Public mirrors for Docker Official base images to avoid Docker Hub/Cloudflare metadata resolution timeouts during Home Assistant builds.
+
 ## 0.1.9
 
 - Sync upstream `Sanher/Happy_server` (0.1.9): chore(version): bump to version 0.1.9.
