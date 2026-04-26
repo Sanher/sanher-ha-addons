@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.15.7
+
+- Sync upstream `Sanher/Agent_runner` (v3.15.7): fix(answers): distingue operador local en historial de chat.
+
 ## 3.15.6
 
 - Sync upstream `Sanher/Agent_runner` (v3.15.6): feat(answers): muestra historial de telegram como chat.
