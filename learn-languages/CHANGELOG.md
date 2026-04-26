@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.6.13
+
+- Sync upstream `Sanher/learn-languages` (v1.6.13): fix(api): evita cache de assets web.
+
 ## 1.6.12
 
 - Sync upstream `Sanher/learn-languages` (v1.6.12): fix(ui): ajusta el gloss de las tags inline.
