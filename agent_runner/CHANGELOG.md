@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.15.8
+
+- Sync upstream `Sanher/Agent_runner` (v3.15.8): feat(email-agent): añade preview al webhook.
+
 ## 3.15.7
 
 - Sync upstream `Sanher/Agent_runner` (v3.15.7): fix(answers): distingue operador local en historial de chat.
