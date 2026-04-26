@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.6.15
+
+- Sync upstream `Sanher/learn-languages` (v1.6.15): fix(ui): amplía el gloss inline.
+
 ## 1.6.14
 
 - Sync upstream `Sanher/learn-languages` (v1.6.14): fix(ui): ajusta el ancho del gloss inline.
