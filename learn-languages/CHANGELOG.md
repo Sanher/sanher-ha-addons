@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.6.12
+
+- Sync upstream `Sanher/learn-languages` (v1.6.12): fix(ui): ajusta el gloss de las tags inline.
+
 ## 1.6.11
 
 - Sync upstream `Sanher/learn-languages` (v1.6.11): fix(ui): corrige el gloss de las tags.
