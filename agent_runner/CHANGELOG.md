@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.15.9
+
+- Sync upstream `Sanher/Agent_runner` (v3.15.9): fix(answers): detecta operador local sin id de telegram.
+
 ## 3.15.8
 
 - Sync upstream `Sanher/Agent_runner` (v3.15.8): feat(email-agent): añade preview al webhook.
