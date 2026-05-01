@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.15.10
+
+- Sync upstream `Sanher/Agent_runner` (v3.15.10): fix(issue): separa intentos de submit.
+
 ## 3.15.9
 
 - Sync upstream `Sanher/Agent_runner` (v3.15.9): fix(answers): detecta operador local sin id de telegram.
