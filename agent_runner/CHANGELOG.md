@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.15.12
+
+- Sync upstream `Sanher/Agent_runner` (v3.15.12): feat(api): usa gpt-5-mini por defecto.
+
 ## 3.15.11
 
 - Sync upstream `Sanher/Agent_runner` (v3.15.11): fix(answers): corrige nombre remoto del chat.
