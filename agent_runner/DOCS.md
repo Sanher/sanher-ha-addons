@@ -42,9 +42,21 @@ Campos obligatorios:
 
 Campos opcionales:
 
-- `email_openai_model`
+- `email_openai_model` (modelo de texto recomendado/default: `gpt-5-mini`)
 - `email_imap_host`
 - `email_webhook_notify_url`
+
+### issue_agent
+
+Campos opcionales:
+
+- `issue_openai_model` (modelo de texto recomendado/default: `gpt-5-mini`)
+
+### answers_agent
+
+Campos opcionales:
+
+- `answers_openai_model` (modelo de texto recomendado/default: `gpt-5-mini`)
 
 ## Persistencia
 

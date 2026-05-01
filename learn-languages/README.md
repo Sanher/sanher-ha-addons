@@ -9,7 +9,7 @@ Add-on de minijuegos de japonés con backend FastAPI y UI web.
 
 ## Variables
 - `OPENAI_API_KEY`
-- `OPENAI_MODEL`
+- `OPENAI_MODEL` (modelo de texto recomendado/default: `gpt-5-mini`)
 - `ELEVENLABS_API_KEY`
 - `ELEVENLABS_VOICE_ID`
 - `LEARN_LANGUAGES_LOG_LEVEL`

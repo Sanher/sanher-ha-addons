@@ -30,7 +30,7 @@ options:
   timezone: "Europe/Madrid"
 
   email_openai_api_key: ""
-  email_openai_model: ""
+  email_openai_model: "gpt-5-mini"
   email_imap_email: ""
   email_imap_password: ""
   email_imap_host: ""
@@ -50,7 +50,7 @@ options:
   issue_project_name: ""
   issue_storage_state_path: ""
   issue_openai_api_key: ""
-  issue_openai_model: ""
+  issue_openai_model: "gpt-5-mini"
   issue_openai_style_law: ""
   issue_repo_frontend: ""
   issue_repo_backend: ""
@@ -62,7 +62,7 @@ options:
 
   answers_telegram_bot_token: ""
   answers_openai_api_key: ""
-  answers_openai_model: ""
+  answers_openai_model: "gpt-5-mini"
   answers_request_timeout_seconds: 30
   telegram_wehbook_secret: ""
 

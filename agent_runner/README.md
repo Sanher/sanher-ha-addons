@@ -16,9 +16,11 @@ Se inyectan a través de `options`/`schema` en `config.yaml`:
 - `email_openai_api_key` (obligatoria para `email_agent`)
 - `email_imap_email` (obligatoria para `email_agent`)
 - `email_imap_password` (obligatoria para `email_agent`)
-- `email_openai_model` (opcional)
+- `email_openai_model` (opcional, modelo de texto recomendado/default: `gpt-5-mini`)
 - `email_imap_host` (opcional)
 - `email_webhook_notify_url` (opcional)
+- `issue_openai_model` (opcional, modelo de texto recomendado/default: `gpt-5-mini`)
+- `answers_openai_model` (opcional, modelo de texto recomendado/default: `gpt-5-mini`)
 - `timezone` (zona horaria para calcular ventanas, p.ej. `Europe/Madrid`)
 
 El directorio persistente siempre es `/data`.
