@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.15.11
+
+- Sync upstream `Sanher/Agent_runner` (v3.15.11): fix(answers): corrige nombre remoto del chat.
+
 ## 3.15.10
 
 - Sync upstream `Sanher/Agent_runner` (v3.15.10): fix(issue): separa intentos de submit.
