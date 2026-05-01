@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.6.16
+
+- Sync upstream `Sanher/learn-languages` (v1.6.16): fix(api): actualiza el modelo openai por defecto.
+
 ## 1.6.15
 
 - Sync upstream `Sanher/learn-languages` (v1.6.15): fix(ui): amplía el gloss inline.
