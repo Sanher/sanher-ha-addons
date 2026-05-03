@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.15.14
+
+- Sync upstream `Sanher/Agent_runner` (v3.15.14): fix(issue): usa responses api con gpt-5.
+
 ## 3.15.13
 
 - Sync upstream `Sanher/Agent_runner` (v3.15.13): fix(email-agent): usa responses api con gpt-5.
