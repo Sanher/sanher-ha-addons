@@ -38,13 +38,6 @@ ADDONS = [
         "changelog": Path("rustdesk_server/CHANGELOG.md"),
     },
     {
-        "name": "happy_server",
-        "repo": "Sanher/Happy_server",
-        "config": Path("happy_server/config.yaml"),
-        "dockerfile": Path("happy_server/Dockerfile"),
-        "changelog": Path("happy_server/CHANGELOG.md"),
-    },
-    {
         "name": "discount_bandit",
         "repo": "Sanher/Discount_Bandit",
         "config": Path("discount_bandit/config.yaml"),
@@ -57,13 +50,6 @@ ADDONS = [
         "config": Path("omnitools/config.yaml"),
         "dockerfile": Path("omnitools/Dockerfile"),
         "changelog": Path("omnitools/CHANGELOG.md"),
-    },
-    {
-        "name": "rss_bridge",
-        "repo": "Sanher/RSS_bridge",
-        "config": Path("rss_bridge/config.yaml"),
-        "changelog": Path("rss_bridge/CHANGELOG.md"),
-        "sync_docker_ref": False,
     },
 ]
 
