@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.15.16
+
+- Sync upstream `Sanher/Agent_runner` (v3.15.16): fix(workday): preserva plan de jornada al reanudar.
+
 ## 3.15.15
 
 - Sync upstream `Sanher/Agent_runner` (v3.15.15): fix(issue): omite temperature con gpt-5.
